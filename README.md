@@ -7,6 +7,7 @@
 ![输入图片说明](https://foruda.gitee.com/images/1687775414843740178/83b88749_8020762.png "1.1.png")
 ![输入图片说明](https://foruda.gitee.com/images/1687775429948022250/154c5c66_8020762.png "1.5.png")
 ![输入图片说明](https://foruda.gitee.com/images/1687775459351770873/5a3cac2a_8020762.png "2.2.png")
+![输入图片说明](images/course/3.2.png)
 
 #### 软件架构
 后端：SpringBoot+Mysql+Redis+MyBatis-plus
