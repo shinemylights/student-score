@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3193574 */
+  src: url('iconfont.woff2?t=1681285920854') format('woff2'),
+       url('iconfont.woff?t=1681285920854') format('woff'),
+       url('iconfont.ttf?t=1681285920854') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fenxi:before {
+  content: "\e709";
+}
+
+.icon-zhuangxiangfuhe:before {
+  content: "\e60a";
+}
+
+.icon-web__zhuanye:before {
+  content: "\e64b";
+}
+
+.icon-tianxie:before {
+  content: "\ec88";
+}
+
+.icon-kecheng:before {
+  content: "\e65c";
+}
+
+.icon-chengji:before {
+  content: "\e645";
+}
+
+.icon-zizhuxuanke:before {
+  content: "\e64f";
+}
+
+.icon-chuangjianketang:before {
+  content: "\e69b";
+}
+
+.icon-ketang:before {
+  content: "\e689";
+}
+
+.icon-ketang1:before {
+  content: "\e67f";
+}
+
+.icon-ketang2:before {
+  content: "\e687";
+}
+
+.icon-shanchu:before {
+  content: "\e627";
+}
+
+.icon-tianjia:before {
+  content: "\e6dd";
+}
+
+.icon-ico:before {
+  content: "\e646";
+}
+
+.icon-dierxueqi:before {
+  content: "\e6b7";
+}
+
+.icon-xuanzehuiyuan:before {
+  content: "\e6c1";
+}
+
+.icon-wxbzhuye:before {
+  content: "\e61f";
+}
+
+.icon-jidianguanli:before {
+  content: "\e614";
+}
+
+.icon-xuesheng:before {
+  content: "\e766";
+}
+
+.icon-chengjixinxi:before {
+  content: "\e60c";
+}
+
+.icon-kechengxinxi:before {
+  content: "\e65a";
+}
+
+.icon-kechengbiao:before {
+  content: "\e67c";
+}
+
+.icon-xuekepaiming:before {
+  content: "\e626";
+}
+
+.icon-_xuesheng:before {
+  content: "\e659";
+}
+
+.icon-sushe:before {
+  content: "\e6c3";
+}
+
+.icon-youxiang:before {
+  content: "\e664";
+}
+
+.icon-icon-user:before {
+  content: "\e677";
+}
+
+.icon-shoujihao:before {
+  content: "\e622";
+}
+
+.icon-mima:before {
+  content: "\e8b2";
+}
+
+.icon-yanzhengma:before {
+  content: "\e603";
+}
+
+.icon-wenjianjia:before {
+  content: "\ec17";
+}
+
