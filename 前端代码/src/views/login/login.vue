@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">HPU学生成绩管理系统</h3>
+        <h3 class="title">学生评价系统</h3>
       </div>
 
       <el-form-item prop="account">
@@ -101,6 +101,10 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  background-image: url('../../assets/img/bg.jpg'); // 替换为您的图片路径
+  background-size: cover; // 覆盖整个容器
+  background-repeat: no-repeat; // 防止图片重复
+  background-position: center; // 图片居中显示
   .el-input {
     display: inline-block;
     height: 47px;
@@ -134,8 +138,8 @@ $cursor: #fff;
 
 <style lang="scss">
 $bg:#2d3a4b;
-$dark_gray:#889aa4;
-$light_gray:#eee;
+$dark_gray: #141617;
+$light_gray: #fcfafa;
 .loginBut{
   width: 100px;
 }

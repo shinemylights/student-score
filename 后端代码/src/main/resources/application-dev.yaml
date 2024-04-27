@@ -8,8 +8,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/springboot_student?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&nullCatalogMeansCurrent=true
-    username: ******
-    password: ******
+    username: root
+    password: 1234qwer
+
+
 
   #redis配置
   redis:
@@ -39,11 +41,11 @@ spring:
   #发送验证邮件
   mail:
     protocol: smtp
-    host: smtp.163.com
-    port: 25
+    host: smtp.qq.com
+    port: 587
     #自己邮箱和协议密码
-    username: *********
-    password: *********
+    username: 1756915595@qq.com
+    password: wwlesyqddyqdcdca
     default-encoding: utf-8
 # mybatis-plus配置包别名
 mybatis-plus:

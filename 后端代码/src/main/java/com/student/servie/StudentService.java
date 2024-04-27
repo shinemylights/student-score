@@ -1,22 +1,16 @@
 package com.student.servie;
 
 import cn.hutool.core.lang.UUID;
-import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.student.common.Result;
 import com.student.dao.entity.StClass;
 import com.student.dao.entity.StDorm;
 import com.student.dao.entity.StMajor;
 import com.student.dao.entity.StUser;
-import com.student.dao.service.IStClassService;
-import com.student.dao.service.IStDormService;
-import com.student.dao.service.IStMajorService;
-import com.student.dao.service.IStUserService;
+import com.student.dao.service.*;
 import com.student.vo.VoElement;
 import com.student.vo.VoUser;
-import org.apache.commons.lang3.text.StrTokenizer;
 import org.apache.shiro.SecurityUtils;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

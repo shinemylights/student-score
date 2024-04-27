@@ -4,7 +4,7 @@ import com.student.common.Result;
 import com.student.dao.entity.StBingCourse;
 import com.student.dao.entity.StDorm;
 import com.student.dao.entity.StUser;
-import com.student.servie.AdminService;
+import com.student.dao.service.AdminService;
 import com.student.vo.QueryBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

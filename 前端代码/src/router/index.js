@@ -47,6 +47,38 @@ export const asyncRoutes = [
       },
     ]
   },
+  //学生画像
+  {
+    path: '/portrait',
+    component: Layout,
+    meta: {
+      title: '学生画像',
+      icon: '#icon-fenxi',
+      roles: ['student']
+    },
+    children: [
+      {
+        path: 'radar',
+        name: 'radar',
+        component: () => import('@/views/portrait/RadarChart.vue'),
+        meta: {
+          title: '雷达图',
+          icon: '#icon-fenxi',
+          roles: ['student']
+        }
+      },
+      {
+        path: 'wordCloud',
+        name: 'wordCloud',
+        component: () => import('@/views/portrait/WordCloud.vue'),
+        meta: {
+          title: '词云图',
+          icon: '#icon-fenxi',
+          roles: ['student']
+        }
+      },
+    ]
+  },
   {
     path: '/score',
     component: Layout,

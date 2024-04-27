@@ -50,6 +50,7 @@ public class MainUtils {
         Calendar date = Calendar.getInstance();
         Map<String, Object> map = getStuDay(date.get(Calendar.YEAR), date.get(Calendar.MONTH));
         int temYear = (int) map.get("year");
+        temYear=temYear-1;
         String temTime = (String) map.get("time");
         List<String> res = new LinkedList<>();
         for (int i = temYear; i >= earlyYear; i--) {

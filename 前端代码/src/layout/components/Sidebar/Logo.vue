@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      title: 'HPU学生成绩管理',
-      logo: require("@/assets/img/hpu.jpg")
+      title: '学生评价系统',
+      logo: require("@/assets/img/zzuli.png")
     }
   }
 }

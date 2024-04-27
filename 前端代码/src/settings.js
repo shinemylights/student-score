@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'HPU学生成绩管理系统',
+  title: '学生评价系统',
 
   /**
    * @type {boolean} true | false

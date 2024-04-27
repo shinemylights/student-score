@@ -3,7 +3,7 @@
     <el-form ref="registerForm" :model="registerForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">HPU学生成绩管理</h3>
+        <h3 class="title">学生评价系统</h3>
       </div>
 
       <el-form-item prop="username">
@@ -211,8 +211,8 @@ $cursor: #fff;
 
 <style lang="scss">
 $bg:#2d3a4b;
-$dark_gray:#889aa4;
-$light_gray:#eee;
+$dark_gray: #131313;
+$light_gray: #fcfcfc;
 .loginBut{
   width: 100px;
 }

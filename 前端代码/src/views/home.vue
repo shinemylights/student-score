@@ -36,7 +36,7 @@
           <el-descriptions-item label="专业">
             <el-tag size="small">{{userInfo.major[0]}}</el-tag>
           </el-descriptions-item>
-          <el-descriptions-item label="详细住址">河南理工大学兰五642</el-descriptions-item>
+          <el-descriptions-item label="详细住址">郑州轻工业大学7#223</el-descriptions-item>
         </el-descriptions>
         <el-button type="text" class="myButton" style="margin-top: 10px" @click="addStuForm">完善信息</el-button>
       </el-card>
