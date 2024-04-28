@@ -27,7 +27,7 @@ export default {
     async initRadarChart() {
       // 基于准备好的DOM，初始化echarts实例
       const myChart = echarts.init(this.$refs.radarChart);
-      const  resData =await this.getKMeansResult(1)
+      const  resData =await this.getKMeansResult(122)
       // 绘制图表
       myChart.setOption({
         // ...您的雷达图配置
@@ -40,12 +40,12 @@ export default {
         radar: [
           {
             indicator: [
-              { text: '数学与自然科学', max: 150 },
-              { text: '人文', max: 150 },
-              { text: '专业基础', max: 150 },
-              { text: '专业选修', max: 120 },
-              { text: '工程实践', max: 108 },
-              { text: '创新能力', max: 72 }
+              { text: '数学与自然科学', max: 10 },
+              { text: '人文', max: 10 },
+              { text: '专业基础', max: 10 },
+              { text: '专业选修', max: 10 },
+              { text: '工程实践', max: 10 },
+              { text: '创新能力', max: 10 }
             ],
             center: ['45%', '50%'],
             radius: 160,
@@ -79,7 +79,7 @@ export default {
                 }
               },
               {
-                value: [100, 93, 50, 90, 70, 60],
+                value: [5, 6, 7, 6.5, 7.2, 4],
                 name: '平均值',
                 areaStyle: {
                   color: new echarts.graphic.RadialGradient(0.1, 0.6, 1, [

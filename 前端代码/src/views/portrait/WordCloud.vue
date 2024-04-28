@@ -35,14 +35,15 @@ export default {
         series: [
           {
             type: 'wordCloud',
-            left: '-5%',                 // X轴偏移量
-            top: '20%',                  // Y轴偏移量
+            left: '20%',                 // X轴偏移量
+            top: '10%',                  // Y轴偏移量
             width: '100%',               // canvas宽度大小
             height: '100%',              // canvas高度大小
-            sizeRange: [12, 50],         //  词典字体大小范围配置
+            sizeRange: [20, 70],         //  词典字体大小范围配置
             rotationRange: [0, 0],       // 词典字体旋转角度配置，默认不旋转
             gridSize: 25,                // 词典字体间距配置
             layoutAnimation: true,       // 为false词典过度会阻塞
+            // maskImage: 'E:\\img.png',
             textStyle: {                 // 词典样式配置
               normal: {
                 color() {
@@ -55,29 +56,29 @@ export default {
             // 渲染词典数据
             data: [{
               value: '50',          // 词典大小配置
-              name: 'iPhone 13',    // 词典名称配置
+              name: '综合素养',    // 词典名称配置
               textStyle: {          // 单独配置某个词典样式
                 shadowBlur: 4,
                 shadowOffsetY: 14,
                 color: '#BDBEFA'
               }
             },
-              { value: '30', name: 'VIVO' },
-              { value: '29', name: 'OPPO' },
-              { value: '28', name: 'HONOR' },
-              { value: '27', name: 'iPhone 12 pro max' },
-              { value: '26', name: 'iPhone 12 pro max' },
-              { value: '25', name: 'HUAWEI MATE 10' },
-              { value: '24', name: 'ONEPLUS' },
-              { value: '23', name: 'Lenova T470' },
-              { value: '22', name: 'MacBook Air ' },
-              { value: '21', name: 'SAMSUNG' },
-              { value: '20', name: 'iPad mini' },
-              { value: '16', name: 'BLACKBERRY' },
-              { value: '14', name: 'OPPO' },
-              { value: '13', name: 'SAMSUNG' },
-              { value: '12', name: '361' },
-              { value: '10', name: 'Lenova' }]
+              { value: '30', name: '逻辑思维' },
+              { value: '29', name: '人文修养' },
+              { value: '28', name: '专业能力' },
+              { value: '27', name: '实践能力' },
+              { value: '26', name: '创新' },
+              { value: '25', name: '数学竞赛' },
+              { value: '24', name: '编程竞赛' },
+              { value: '23', name: '实习' },
+              { value: '22', name: '动手能力' },
+              { value: '21', name: '外语' },
+              { value: '20', name: '口才' },
+              { value: '16', name: '体育' },
+              { value: '14', name: 'C++' },
+              { value: '13', name: 'Java' },
+              { value: '12', name: '进步' },
+              { value: '10', name: '分析问题' }]
           }
         ],
       });
