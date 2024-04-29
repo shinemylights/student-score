@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div ref="radarChart" class="radar-chart"></div>
+    <div ref="barChart" class="bar-chart" style="width: 600px; height: 400px;"></div>
   </div>
 <!--  <div ref="radarChart" style="width: 600px; height: 400px;"></div>-->
 </template>
@@ -99,6 +100,23 @@ export default {
         ]
 
 
+      });
+
+      const barChart = echarts.init(this.$refs.barChart);
+      barChart.setOption({
+        xAxis: {
+          type: 'category',
+          data: ['数学', '人文', '专业基础', '专业选修', '工程实践', '创新能力']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: resData,
+            type: 'bar'
+          }
+        ]
       });
     }
   }
