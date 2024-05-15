@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Message,Notification} from 'element-ui'
 import router from "@/router";
 
-const baseURL = 'http://localhost:8082'
+const baseURL = 'http://localhost:8083'
 // create an axios instance
 const service = axios.create({
   baseURL: baseURL,

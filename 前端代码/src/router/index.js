@@ -80,6 +80,27 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/competition',
+    component: Layout,
+    meta: {
+      title: '竞赛',
+      icon: '#icon-js',
+      roles: ['student']
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        component: () => import('@/views/competition/index'),
+        meta: {
+          title: '竞赛信息',
+          icon: '#icon-jsinfo',
+          roles: ['student']
+        }
+      }
+    ]
+  },
+  {
     path: '/score',
     component: Layout,
     meta: {
@@ -152,16 +173,16 @@ export const asyncRoutes = [
           roles: ['admin']
         }
       },
-      {
-        path: 'dormList',
-        name: 'dormList',
-        component: () => import('@/views/student/dormList'),
-        meta: {
-          title: '宿舍信息',
-          icon: '#icon-sushe',
-          roles: ['admin']
-        }
-      }
+      // {
+      //   path: 'dormList',
+      //   name: 'dormList',
+      //   component: () => import('@/views/student/dormList'),
+      //   meta: {
+      //     title: '宿舍信息',
+      //     icon: '#icon-sushe',
+      //     roles: ['admin']
+      //   }
+      // }
     ]
   },
   {
@@ -213,22 +234,22 @@ export const asyncRoutes = [
       },
     ]
   },
-  {
-    path: '/bingCourse',
-    component: Layout,
-    children: [
-      {
-        path: 'bingCourse',
-        name: 'bingCourse',
-        component: () => import('@/views/course/bingCourse'),
-        meta: {
-          title: '选课管理',
-          icon: '#icon-zizhuxuanke',
-          roles: ['admin']
-        }
-      },
-    ]
-  },
+  // {
+  //   path: '/bingCourse',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'bingCourse',
+  //       name: 'bingCourse',
+  //       component: () => import('@/views/course/bingCourse'),
+  //       meta: {
+  //         title: '选课管理',
+  //         icon: '#icon-zizhuxuanke',
+  //         roles: ['admin']
+  //       }
+  //     },
+  //   ]
+  // },
 
   //教师独有
   {
@@ -282,56 +303,56 @@ export const asyncRoutes = [
 
 
   //课堂管理
-  {
-    path: '/classRoom',
-    component: Layout,
-    meta: {
-      title: '课堂管理',
-      icon: '#icon-ketang2',
-      roles: ['student','teacher']
-    },
-    children: [
-      {
-        path: 'roomListTea',
-        name: 'roomListTea',
-        component: () => import('@/views/classRoom/roomListTea'),
-        meta: {
-          title: '我的课堂',
-          icon: '#icon-ketang1',
-          roles: ['teacher']
-        }
-      },
-      {
-        path: 'roomListStu',
-        name: 'roomListStu',
-        component: () => import('@/views/classRoom/roomListStu'),
-        meta: {
-          title: '我的课堂',
-          icon: '#icon-ketang1',
-          roles: ['student']
-        }
-      },
-      {
-        hidden:true,
-        path: 'roomDetail',
-        name: 'roomDetail',
-        component: () => import('@/views/classRoom/roomDetail'),
-        meta: {
-          roles: ['teacher','student']
-        }
-      },
-      {
-        path: 'roomAdd',
-        name: 'roomAdd',
-        component: () => import('@/views/course/bingCourse'),
-        meta: {
-          title: '加入课堂',
-          icon: '#icon-ketang',
-          roles: ['student']
-        }
-      }
-    ]
-  },
+  // {
+  //   path: '/classRoom',
+  //   component: Layout,
+  //   meta: {
+  //     title: '课堂管理',
+  //     icon: '#icon-ketang2',
+  //     roles: ['student','teacher']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'roomListTea',
+  //       name: 'roomListTea',
+  //       component: () => import('@/views/classRoom/roomListTea'),
+  //       meta: {
+  //         title: '我的课堂',
+  //         icon: '#icon-ketang1',
+  //         roles: ['teacher']
+  //       }
+  //     },
+  //     {
+  //       path: 'roomListStu',
+  //       name: 'roomListStu',
+  //       component: () => import('@/views/classRoom/roomListStu'),
+  //       meta: {
+  //         title: '我的课堂',
+  //         icon: '#icon-ketang1',
+  //         roles: ['student']
+  //       }
+  //     },
+  //     {
+  //       hidden:true,
+  //       path: 'roomDetail',
+  //       name: 'roomDetail',
+  //       component: () => import('@/views/classRoom/roomDetail'),
+  //       meta: {
+  //         roles: ['teacher','student']
+  //       }
+  //     },
+  //     {
+  //       path: 'roomAdd',
+  //       name: 'roomAdd',
+  //       component: () => import('@/views/course/bingCourse'),
+  //       meta: {
+  //         title: '加入课堂',
+  //         icon: '#icon-ketang',
+  //         roles: ['student']
+  //       }
+  //     }
+  //   ]
+  // },
 
 
   // 404 page must be placed at the end !!!

@@ -1,0 +1,151 @@
+<template>
+  <div>
+    <el-card>
+      <div slot="title">
+        <div class="edit-head">
+          <el-button @click="close" type="text" icon="el-icon-arrow-left">返回</el-button>
+          <div class="head-name">添加</div>
+          <span></span>
+          <el-button @click="close" type="text" icon="el-icon-close" class="window-close"></el-button>
+        </div>
+      </div>
+      <el-form :model="form" label-width="100px" :rules="formValidate" label-position="left">
+        <el-form-item label="竞赛级别" prop="level">
+          <el-select v-model="form.level" style="width:570px">
+            <el-option label="国家级" value="国家级"></el-option>
+            <el-option label="省级" value="省级"></el-option>
+            <el-option label="市级" value="市级"></el-option>
+            <el-option label="校级" value="校级"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="竞赛名称" prop="title">
+          <el-input v-model="form.title" clearable style="width:570px"></el-input>
+        </el-form-item>
+        <el-form-item label="竞赛奖项" prop="value">
+          <el-input v-model="form.value" clearable style="width:570px"></el-input>
+        </el-form-item>
+        <!-- 添加上传奖项证明文件的模块 -->
+        <el-form-item label="上传证明" prop="awardProof">
+          <!-- 这里应替换为您的上传处理URL -->
+          <el-upload
+            class="upload-demo"
+            action="http://localhost:8083/competition/upEvidence"
+            :headers="myHeaders"
+          :on-preview="handlePreview"
+          :on-remove="handleRemove"
+          :before-remove="beforeRemove"
+          multiple
+          :limit="3"
+          :on-exceed="handleExceed"
+          :file-list="fileList">
+          <el-button size="small" type="primary">点击上传</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-form-item>
+        <el-form-item>
+          <el-button @click="handleSubmit" :loading="submitLoading" type="primary">提交并保存</el-button>
+          <el-button @click="handleReset">重置</el-button>
+          <el-button type="dashed" @click="close">关闭</el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
+  </div>
+</template>
+
+<script>
+import {
+    addCompetition
+} from "./api.js";
+export default {
+    name: "add",
+    components: {},
+    data() {
+        return {
+          myHeaders: {token: sessionStorage.getItem('token')},
+            submitLoading: false,
+            form: {
+                level: "",
+                title: "",
+                value: "",
+            },
+            formValidate: {}
+        };
+    },
+    methods: {
+        init() {},
+        handleReset() {
+            this.$refs.form.resetFields();
+        },
+        handleSubmit() {
+            // this.$refs.form.validate(valid => {
+            //     if (valid) {
+          console.log("进入了handle方法")
+                    addCompetition(this.form).then(res => {
+
+                        this.submitLoading = false;
+                        if (res.success) {
+                            this.$Message.success("操作成功");
+                            this.submited();
+                        }
+                    });
+                // }
+            // });
+        },
+        close() {
+            this.$emit("close", true);
+        },
+        submited() {
+            this.$emit("submited", true);
+        }
+    },
+    mounted() {
+        this.init();
+    }
+};
+</script>
+
+<style lang="css">
+.edit-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    .back-title {
+        color: #515a6e;
+        display: flex;
+        align-items: center;
+    }
+
+    .head-name {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        color: #17233d;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .window-close {
+        z-index: 1;
+        font-size: 12px;
+        position: absolute;
+        right: 0px;
+        top: -5px;
+        overflow: hidden;
+        cursor: pointer;
+
+        .ivu-icon-ios-close {
+            color: #999;
+            transition: color .2s ease;
+        }
+    }
+
+    .window-close .ivu-icon-ios-close:hover {
+        color: #444;
+    }
+}
+</style>
