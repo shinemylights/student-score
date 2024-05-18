@@ -13,6 +13,9 @@ import '@/icons'
 import '@/permission' // permission control
 import request from "@/utils/request"; // icon
 
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css'; // 引入View UI的CSS样式
+Vue.use(ViewUI); // 让Vue应用使用View UI
 
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })

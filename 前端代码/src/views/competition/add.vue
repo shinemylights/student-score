@@ -92,7 +92,7 @@ export default {
                     addCompetition(this.form).then(res => {
 
                         this.submitLoading = false;
-                        if (res.success) {
+                        if (res.data.success) {
                             this.$Message.success("操作成功");
                             this.submited();
                         }

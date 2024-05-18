@@ -14,11 +14,12 @@ export const getCompetitionOne = (params) => {
   });
 }
 export const getCompetitionList = (params) => {
+  console.info(params);
   let url = '/competition/getMyPage'
   // let accessToken = getStore('accessToken');
   // let accessToken = ''
   return axios({
-    method: 'get',
+    method: 'post',
     url: `${base}${url}`,
     data: params,
     headers: {

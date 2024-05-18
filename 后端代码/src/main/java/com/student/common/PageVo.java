@@ -29,4 +29,13 @@ public class PageVo implements Serializable {
 
     @ApiModelProperty(value = "每页个数", notes = "建议设置为15")
     private int pageSize;
+
+    @ApiModelProperty(value = "竞赛级别")
+    private String level;
+
+    @ApiModelProperty(value = "竞赛名称")
+    private String title;
+
+    @ApiModelProperty(value = "竞赛奖项")
+    private String value;
 }

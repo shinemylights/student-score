@@ -44,7 +44,11 @@
                   <el-image v-for="url in item.examPic.split(',')" :src="getExamUrl(url)"></el-image>
                 </div>
               </el-collapse-item>
-              <div v-show="role==='admin'&&item.finalState==='教师审核通过'" style="float: right;margin-top: 10px;margin-bottom: 10px">
+<!--              <div v-show="role==='admin'&&item.finalState==='教师审核通过'" style="float: right;margin-top: 10px;margin-bottom: 10px">-->
+<!--                <el-button type="primary" size="mini" round @click="adminData.type=0;adminDialog=true;">同意</el-button>-->
+<!--                <el-button type="warning" size="mini" round @click="adminData.type=1;adminDialog=true;">拒绝</el-button>-->
+<!--              </div>-->
+              <div v-show="role==='admin'" style="float: right;margin-top: 10px;margin-bottom: 10px">
                 <el-button type="primary" size="mini" round @click="adminData.type=0;adminDialog=true;">同意</el-button>
                 <el-button type="warning" size="mini" round @click="adminData.type=1;adminDialog=true;">拒绝</el-button>
               </div>

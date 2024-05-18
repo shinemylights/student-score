@@ -98,9 +98,9 @@ public class CompetitionController {
         return new ResultUtil<IPage<Competition>>().setData(data);
     }
 
-    @RequestMapping(value = "/getMyPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/getMyPage", method = RequestMethod.POST)
     @ApiOperation(value = "查询我的学科竞赛")
-    public Result<IPage<Competition>> getMyPage(@ModelAttribute Competition competition ,@ModelAttribute PageVo page){
+    public Result<IPage<Competition>> getMyPage(@RequestBody PageVo page){
         StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
         // QueryWrapper<StudentEvaluate> seQw = new QueryWrapper<>();
         // seQw.eq("user_id",currUser.getId());
@@ -114,16 +114,20 @@ public class CompetitionController {
         // }
         QueryWrapper<Competition> qw = new QueryWrapper<>();
         qw.eq("evaluate_id",currUser.getId());
-        if(!ZwzNullUtils.isNull(competition.getLevel())) {
-            qw.like("level",competition.getLevel());
+        if(!ZwzNullUtils.isNull(page.getLevel())) {
+            qw.like("level",page.getLevel());
         }
-        if(!ZwzNullUtils.isNull(competition.getTitle())) {
-            qw.like("title",competition.getTitle());
+        if(!ZwzNullUtils.isNull(page.getTitle())) {
+            qw.like("title",page.getTitle());
         }
-        if(!ZwzNullUtils.isNull(competition.getValue())) {
-            qw.like("value",competition.getValue());
+        if(!ZwzNullUtils.isNull(page.getValue())) {
+            qw.like("value",page.getValue());
         }
+        List<Competition> list = iCompetitionService.list(qw);
+        System.out.println(list);
+        // System.out.println(competition);
         IPage<Competition> data = iCompetitionService.page(PageUtil.initMpPage(page),qw);
+        System.out.println(data);
         return new ResultUtil<IPage<Competition>>().setData(data);
     }
 

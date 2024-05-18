@@ -12,7 +12,6 @@ spring:
     password: 1234qwer
 
 
-
   #redis配置
   redis:
     # 地址
@@ -52,7 +51,7 @@ mybatis-plus:
   type-aliases-package: com.student.dao.entity
   configuration:
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
-    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   type-enums-package: com.student.dao.myenum
 #用户头像上传路径
 stuImgFile: "E:/uploads/images/student/"

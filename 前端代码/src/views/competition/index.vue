@@ -1,114 +1,84 @@
 <template>
-  <div class="search">
-<!--    <el-dialog v-if="currView=='add'" :visible.sync="isAddDialogVisible" @close="currView='index'">-->
-<!--      &lt;!&ndash; Add your 'add' component content here &ndash;&gt;-->
-<!--    </el-dialog>-->
-<!--    <el-dialog v-if="currView=='edit'" :visible.sync="isAddDialogVisible" @close="currView='index'">-->
-<!--      &lt;!&ndash; Add your 'edit' component content here &ndash;&gt;-->
-<!--    </el-dialog>-->
+<div class="search">
     <add v-if="currView=='add'" @close="currView='index'" @submited="submited" />
     <edit v-if="currView=='edit'" @close="currView='index'" @submited="submited" :data="formData" />
-    <el-card v-show="currView=='index'">
-      <el-row v-show="openSearch" @keydown.enter.native="handleSearch">
-        <el-form :model="searchForm" inline class="demo-form-inline">
-          <el-form-item label="" prop="level">
-            <el-select v-model="searchForm.level" placeholder="请选择">
-              <el-option label="国家级" value="国家级"></el-option>
-              <el-option label="省级" value="省级"></el-option>
-              <el-option label="市级" value="市级"></el-option>
-              <el-option label="校级" value="校级"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="" prop="title">
-            <el-input v-model="searchForm.title" placeholder="请输入竞赛名称" clearable></el-input>
-          </el-form-item>
-          <el-form-item label="" prop="value">
-            <el-input v-model="searchForm.value" placeholder="请输入竞赛奖项" clearable></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button @click="handleSearch" type="primary" icon="el-icon-search">搜索</el-button>
-            <el-button @click="handleReset" type="warning" icon="el-icon-refresh">重置</el-button>
-            <el-button @click="add" type="info" icon="el-icon-plus">添加</el-button>
-            <el-button @click="delAll" type="danger" icon="el-icon-delete">删除</el-button>
-            <el-button @click="excelData" type="success" icon="el-icon-download">导出</el-button>
-          </el-form-item>
-        </el-form>
-      </el-row>
-      <!-- ... 其他代码 ... -->
-      <div class="operation" style="position:relative;">
-        <transition>
-          <div v-show="showFilterPanelFlag" class="filter-panel">
-            <el-checkbox-group v-model="selected">
-              <div v-for="item in mycolumns" :key="item.key">
-                <el-checkbox :label="item.title" style="margin: 2px 5px"></el-checkbox>
-              </div>
-            </el-checkbox-group>
-          </div>
-        </transition>
-      </div>
-
-      <!-- Conditional Row -->
-      <div v-if="openTip"></div>
-
-      <!-- Table Row -->
-      <el-table
-        :data="data"
-        style="width: 100%"
-        border
-        stripe
-        size="small"
-        @sort-change="changeSort"
-        @selection-change="changeSelect"
-        @row-click="rowClick"
-        :row-class-name="rowClassName"
-      >
-        <el-table-column
-          v-for="(column, index) in columns"
-          :key="index"
-          :prop="column.key"
-          :label="column.title"
-          :sortable="column.sortable || 'custom'"
-        ></el-table-column>
-      </el-table>
-<!--      <el-row>-->
-<!--        <el-table-->
-<!--          :columns="columns"-->
-<!--          :data="data"-->
-<!--          style="width: 100%"-->
-<!--          @selection-change="handleSelectionChange">-->
-<!--          &lt;!&ndash; Define your table columns here &ndash;&gt;-->
-<!--        </el-table>-->
-<!--      </el-row>-->
-      <el-row type="flex" justify="end" class="page">
-        <el-pagination
-          @current-change="handleCurrentChange"
-          :current-page="currentPage"
-          :page-sizes="[15, 20, 50]"
-          :page-size="pageSize"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="total">
-        </el-pagination>
-      </el-row>
-    </el-card>
-  </div>
+    <Card v-show="currView=='index'">
+        <Row v-show="openSearch" @keydown.enter.native="handleSearch">
+            <Form ref="searchForm" :model="searchForm" inline :label-width="0">
+                <Form-item ref="searchForm" :model="searchForm" inline :label-width="0" style="display:flex;">
+                    <Form-item label="" prop="level">
+                        <Select v-model="searchForm.level" style="width:200px">
+                            <Option value="国家级">国家级</Option>
+                            <Option value="省级">省级</Option>
+                            <Option value="市级">市级</Option>
+                            <Option value="校级">校级</Option>
+                        </Select>
+                    </Form-item>
+                    <Form-item label="" prop="title">
+                        <Input type="text" v-model="searchForm.title" placeholder="请输入竞赛名称" clearable style="width: 200px" />
+                    </Form-item>
+                    <Form-item label="" prop="value">
+                        <Input type="text" v-model="searchForm.value" placeholder="请输入竞赛奖项" clearable style="width: 200px" />
+                    </Form-item>
+                    <Form-item style="margin-left:10px;" class="br">
+                        <Button @click="handleSearch" type="primary" icon="ios-search" size="small" ghost>搜索</Button>
+                        <Button @click="handleReset" type="warning" size="small" icon="md-refresh" ghost>重置</Button>
+                        <Button @click="add" type="info" size="small" icon="md-add" ghost>添加</Button>
+                        <Button @click="delAll" type="error" icon="md-trash" size="small" ghost>删除</Button>
+                        <Button @click="excelData" type="success" icon="md-paper-plane" size="small" ghost>导出</Button>
+                    </Form-item>
+                    <!-- <Form-item style="position:fixed;right:50px;top:130px">
+                        <Button type="info" @click="showFilterPanelFlag = !showFilterPanelFlag" class="showFilterPanelFlag" icon="md-settings" size="small" ghost>
+                            列筛选</Button>
+                        <Button type="warning" @click="modal1 = true" class="showFilterPanelFlag" icon="ios-help-circle-outline" size="small" ghost>
+                            使用教程</Button>
+                        <Modal v-model="modal1" title="使用教程">
+                            <p>1.XXXXXXXXXXXXXXXXXXXXXXXX</p>
+                            <p>2.XXXXXXXXXXXXXXXXXXXXXXXX</p>
+                            <p>3.XXXXXXXXXXXXXXXXXXXXXXXX</p>
+                        </Modal>
+                    </Form-item> -->
+                </Form-item>
+            </Form>
+        </Row>
+        <Row class="operation" style="position:relative;">
+            <transition>
+                <div v-show="showFilterPanelFlag" class="filter-panel">
+                    <CheckboxGroup v-model="selected">
+                        <div v-for="item in mycolumns" :key="item.key">
+                            <Checkbox :label="item.title" style="margin: 2px 5px"></Checkbox>
+                        </div>
+                    </CheckboxGroup>
+                </div>
+            </transition>
+        </Row>
+        <Row v-show="openTip"> </Row>
+        <Row>
+            <Table :loading="loading" :height="tableHeight" border stripe size="small" :columns="columns" :data="data" ref="table" sortable="custom" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassNmae"></Table>
+        </Row>
+        <Row type="flex" justify="end" class="page">
+            <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[15,20,50]" size="small" show-total show-elevator show-sizer></Page>
+        </Row>
+    </Card>
+</div>
 </template>
 
 <script>
 import {
-  getCompetitionList,
-  deleteCompetition
-} from './api.js'
+    getCompetitionList,
+    deleteCompetition
+} from "./api.js";
 import add from "./add.vue";
 import edit from "./edit.vue";
 export default {
-  name: "single-window",
-  components: {
-    add,
-    edit
-  },
-  data() {
-    return {
-      tableHeight: 0,
+    name: "single-window",
+    components: {
+        add,
+        edit
+    },
+    data() {
+        return {
+            tableHeight: 0,
             selected: [
                 "选择",
                 "序号",
@@ -130,6 +100,9 @@ export default {
             searchForm: {
                 pageNumber: 1,
                 pageSize: 15,
+                title: "",
+                level: "",
+                value: "",
                 sort: "createTime",
                 order: "desc",
             },
@@ -325,13 +298,10 @@ export default {
         getDataList() {
             this.loading = true;
             getCompetitionList(this.searchForm).then(res => {
-              console.info(res);
                 this.loading = false;
                 if (res.data.success) {
                     this.data = res.data.result.records;
                     this.total = res.data.result.total;
-                    console.info(this.data);
-                    console.info(this.total);
                 }
             });
         },
