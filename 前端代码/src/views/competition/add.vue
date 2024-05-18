@@ -34,6 +34,7 @@
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :before-remove="beforeRemove"
+            :on-success="handleAvatarSuccess"
           multiple
           :limit="3"
           :on-exceed="handleExceed"
@@ -67,12 +68,20 @@ export default {
                 level: "",
                 title: "",
                 value: "",
+                image: ""
             },
             formValidate: {}
         };
     },
     methods: {
         init() {},
+      // 头像上传成功后的处理函数
+      handleAvatarSuccess(response, file) {
+          console.log(response);
+          console.log(file);
+        this.form.image = this.form.image + ',' + response.result.image; // 假设返回的数据结构中包含url字段
+        console.log(this.form.image);
+      },
         handleReset() {
             this.$refs.form.resetFields();
         },

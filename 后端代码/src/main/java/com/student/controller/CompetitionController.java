@@ -5,6 +5,7 @@ import cn.hutool.core.lang.UUID;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.student.common.PageVo;
+import com.student.common.UploadResult;
 import com.student.dao.entity.Competition;
 import com.student.dao.entity.Result;
 import com.student.dao.entity.StUser;
@@ -21,9 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author lxy
@@ -43,10 +42,13 @@ public class CompetitionController {
 
 
     @RequestMapping("/upEvidence")
-    public void upAvatar(@RequestBody MultipartFile file){
+    public Result<UploadResult> upEvidence(@RequestBody MultipartFile file){
         String oriFilename= file.getOriginalFilename();
-        //用uuid构造唯一文件名
-        String newFilename= UUID.randomUUID()+"-"+"-"+oriFilename;
+        // 截取图片后缀名
+        String extension = oriFilename.substring(oriFilename.lastIndexOf("."));
+        //用构造文件名
+        StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
+        String newFilename= UUID.randomUUID()+"-"+currUser.getId()+extension;
         //文件路径
         File filePath = new File(imgFile);
         if(!filePath.exists()){
@@ -60,6 +62,10 @@ public class CompetitionController {
         } catch (IOException e) {
 
         }
+
+        UploadResult uploadResult = new UploadResult();
+        uploadResult.setImage(newFilename);
+        return new ResultUtil<UploadResult>().setData(uploadResult);
 
     }
 
@@ -85,6 +91,7 @@ public class CompetitionController {
     @ApiOperation(value = "查询学科竞赛")
     public Result<IPage<Competition>> getByPage(@ModelAttribute Competition competition , @ModelAttribute PageVo page){
         QueryWrapper<Competition> qw = new QueryWrapper<>();
+
         // if(!ZwzNullUtils.isNull(competition.getCreateBy())) {
         // }
         IPage<Competition> data = iCompetitionService.page(PageUtil.initMpPage(page),qw);
@@ -129,14 +136,30 @@ public class CompetitionController {
         return ResultUtil.error();
     }
 
+    // @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    // @ApiOperation(value = "新增学科竞赛")
+    // public Result<Competition> insert(Competition competition){
+    //     // StudentEvaluate se = evaluateUtils.getMyStudentEvaluate();
+    //     // competition.setEvaluateId(se.getId());
+    //     StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
+    //     competition.setEvaluateId(currUser.getId().toString());
+    //     competition.setId(UUID.randomUUID().toString());
+    //     iCompetitionService.saveOrUpdate(competition);
+    //
+    //     // calGrades(se);
+    //     return new ResultUtil<Competition>().setData(competition);
+    // }
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     @ApiOperation(value = "新增学科竞赛")
-    public Result<Competition> insert(Competition competition){
+    public Result<Competition> insert(@RequestBody Competition competition){
         // StudentEvaluate se = evaluateUtils.getMyStudentEvaluate();
         // competition.setEvaluateId(se.getId());
         StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
         competition.setEvaluateId(currUser.getId().toString());
         competition.setId(UUID.randomUUID().toString());
+        competition.setImage(competition.getImage().substring(1));
+        System.out.println(competition);
         iCompetitionService.saveOrUpdate(competition);
 
         // calGrades(se);

@@ -35,14 +35,50 @@
         </el-form>
       </el-row>
       <!-- ... 其他代码 ... -->
-      <el-row>
-        <el-table
-          :data="data"
-          style="width: 100%"
-          @selection-change="handleSelectionChange">
-          <!-- Define your table columns here -->
-        </el-table>
-      </el-row>
+      <div class="operation" style="position:relative;">
+        <transition>
+          <div v-show="showFilterPanelFlag" class="filter-panel">
+            <el-checkbox-group v-model="selected">
+              <div v-for="item in mycolumns" :key="item.key">
+                <el-checkbox :label="item.title" style="margin: 2px 5px"></el-checkbox>
+              </div>
+            </el-checkbox-group>
+          </div>
+        </transition>
+      </div>
+
+      <!-- Conditional Row -->
+      <div v-if="openTip"></div>
+
+      <!-- Table Row -->
+      <el-table
+        :data="data"
+        style="width: 100%"
+        border
+        stripe
+        size="small"
+        @sort-change="changeSort"
+        @selection-change="changeSelect"
+        @row-click="rowClick"
+        :row-class-name="rowClassName"
+      >
+        <el-table-column
+          v-for="(column, index) in columns"
+          :key="index"
+          :prop="column.key"
+          :label="column.title"
+          :sortable="column.sortable || 'custom'"
+        ></el-table-column>
+      </el-table>
+<!--      <el-row>-->
+<!--        <el-table-->
+<!--          :columns="columns"-->
+<!--          :data="data"-->
+<!--          style="width: 100%"-->
+<!--          @selection-change="handleSelectionChange">-->
+<!--          &lt;!&ndash; Define your table columns here &ndash;&gt;-->
+<!--        </el-table>-->
+<!--      </el-row>-->
       <el-row type="flex" justify="end" class="page">
         <el-pagination
           @current-change="handleCurrentChange"
@@ -289,10 +325,13 @@ export default {
         getDataList() {
             this.loading = true;
             getCompetitionList(this.searchForm).then(res => {
+              console.info(res);
                 this.loading = false;
-                if (res.success) {
-                    this.data = res.result.records;
-                    this.total = res.result.total;
+                if (res.data.success) {
+                    this.data = res.data.result.records;
+                    this.total = res.data.result.total;
+                    console.info(this.data);
+                    console.info(this.total);
                 }
             });
         },

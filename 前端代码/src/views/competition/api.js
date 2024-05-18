@@ -14,15 +14,15 @@ export const getCompetitionOne = (params) => {
   });
 }
 export const getCompetitionList = (params) => {
-  let url = '/competition/insert'
+  let url = '/competition/getMyPage'
   // let accessToken = getStore('accessToken');
-  let accessToken = ''
+  // let accessToken = ''
   return axios({
-    method: 'post',
+    method: 'get',
     url: `${base}${url}`,
     data: params,
     headers: {
-      'accessToken': accessToken
+      'token': sessionStorage.getItem('token')
     }
   });
 }
@@ -43,7 +43,7 @@ export const getCompetitionCount = (params) => {
     console.log("进入了添加方法")
     let url = '/competition/insert'
     // let accessToken = getStore('accessToken');
-    let accessToken = ''
+    // let accessToken = ''
     return axios({
       method: 'post',
       url: `${base}${url}`,

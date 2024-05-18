@@ -11,7 +11,6 @@ import lombok.Data;
  * @author 郑为中
  */
 @Data
-
 @TableName("a_competition")
 @ApiModel(value = "学科竞赛")
 public class Competition {
@@ -31,4 +30,7 @@ public class Competition {
 
     @ApiModelProperty(value = "竞赛奖项")
     private String value;
+
+    @ApiModelProperty(value = "图片")
+    private String image;
 }
