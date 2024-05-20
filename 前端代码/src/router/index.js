@@ -101,6 +101,68 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/library',
+    component: Layout,
+    meta: {
+      title: '竞赛',
+      icon: '#icon-js',
+      roles: ['student']
+    },
+    children: [
+      {
+        path: 'LibraryStats',
+        name: 'LibraryStats',
+        component: () => import('@/views/library/LibraryStats'),
+        meta: {
+          title: '图书馆出入',
+          icon: '#icon-jsinfo',
+          roles: ['student']
+        }
+      },
+    ]
+  },
+  {
+    path: '/WenJuan',
+    component: Layout,
+    meta: {
+      title: '问卷',
+      icon: '#icon-js',
+      roles: ['student']
+    },
+    children: [
+      {
+        path: 'pinDeWenJuan',
+        name: 'pinDeWenJuan',
+        component: () => import('@/views/WenJuan/pinDeWenJuan/index'),
+        meta: {
+          title: '品德自评问卷',
+          icon: '#icon-jsinfo',
+          roles: ['student']
+        }
+      },
+      {
+        path: 'shenXinWenJuan',
+        name: 'shenXinWenJuan',
+        component: () => import('@/views/WenJuan/shenXinWenJuan/index'),
+        meta: {
+          title: '身心自评问卷',
+          icon: '#icon-jsinfo',
+          roles: ['student']
+        }
+      },
+      {
+        path: 'xueYeWenJuan',
+        name: 'xueYeWenJuan',
+        component: () => import('@/views/WenJuan/xueYeWenJuan/index'),
+        meta: {
+          title: '学业自评问卷',
+          icon: '#icon-jsinfo',
+          roles: ['student']
+        }
+      }
+    ]
+  },
+  {
     path: '/score',
     component: Layout,
     meta: {
@@ -283,7 +345,7 @@ export const asyncRoutes = [
         name: 'reviewList',
         component: () => import('@/views/reviewGrade/reviewList'),
         meta: {
-          title: '成绩复核列表',
+          title: '奖项复核列表',
           icon: '#icon-zhuangxiangfuhe',
           roles: ['teacher','admin']
         }
@@ -294,7 +356,7 @@ export const asyncRoutes = [
         name: 'reviewDetail',
         component: () => import('@/views/reviewGrade/reviewDetail'),
         meta: {
-          title: '成绩复核详情',
+          title: '奖项复核详情',
           roles: ['teacher','admin','student']
         }
       }

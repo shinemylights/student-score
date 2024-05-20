@@ -11,7 +11,7 @@
         <el-card>
 
           <div v-if="item.type==='student'">
-            <h4>学生申请成绩审核</h4>
+            <h4>学生申请奖项审核</h4>
             <h4 style="float: right">{{item.state}}</h4>
             <p><el-tag style="margin-right: 10px">学生</el-tag>{{item.stuId}} 提交于 {{item.date}}</p>
             <el-collapse>
@@ -33,13 +33,13 @@
             <el-collapse>
               <el-collapse-item title="详细信息" name="1">
                 <div v-show="item.state==='教师审核通过'">
-                  <el-tag type="warning" style="margin-right: 10px">成绩更改</el-tag>
-                  <span><el-tag>{{item.oldGrade}}</el-tag> ----- 变更为 ----- <el-tag>{{item.newGrade}}</el-tag></span>
+<!--                  <el-tag type="warning" style="margin-right: 10px">成绩更改</el-tag>-->
+<!--                  <span><el-tag>{{item.oldGrade}}</el-tag> -&#45;&#45;&#45;&#45; 变更为 -&#45;&#45;&#45;&#45; <el-tag>{{item.newGrade}}</el-tag></span>-->
                 </div>
                 <el-tag type="warning" style="margin-right: 10px;margin-top: 10px">教师备注</el-tag>
                 <span>{{item.desc}}</span>
                 <br>
-                <el-tag type="warning" style="margin-right: 10px;margin-top: 10px">试卷图片</el-tag>
+<!--                <el-tag type="warning" style="margin-right: 10px;margin-top: 10px">试卷图片</el-tag>-->
                 <div class="imageFlex">
                   <el-image v-for="url in item.examPic.split(',')" :src="getExamUrl(url)"></el-image>
                 </div>
