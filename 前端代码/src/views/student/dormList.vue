@@ -1,19 +1,19 @@
 <template>
   <div>
-    <el-button size="small" style="margin-bottom: 15px" type="primary" @click="dormDialog=true;dormTitle='新增宿舍'">新增</el-button>
+    <el-button size="small" style="margin-bottom: 15px" type="primary" @click="dormDialog=true;dormTitle='新增标签'">新增</el-button>
     <query-box :show-data="showData" :query-type="queryType" @submitData="submitData"></query-box>
     <el-table
       :data="pageData.records"
       style="width: 100%">
       <el-table-column
-        label="宿舍地址"
+        label="标签名"
         width="180">
         <template slot-scope="scope">
           <span>{{ scope.row.dormAddress }}</span>
         </template>
       </el-table-column>
       <el-table-column
-        label="宿舍编号"
+        label="描述"
         width="180">
         <template slot-scope="scope">
           <span>{{ scope.row.dormNum }}</span>
@@ -23,7 +23,7 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
-            @click="dormDialog=true;dormData=scope.row;dormTitle='编辑宿舍'">编辑</el-button>
+            @click="dormDialog=true;dormData=scope.row;dormTitle='编辑标签'">编辑</el-button>
           <el-button
             size="mini"
             type="danger"
@@ -44,11 +44,11 @@
     <!--宿舍操作弹出框-->
     <el-dialog :title="dormTitle" :visible.sync="dormDialog" width="30%" @close="dormData={}">
       <el-form :model="dormData">
-        <el-form-item size="medium" label="宿舍地址">
-          <el-input v-model="dormData.dormAddress" placeholder="宿舍地址"></el-input>
+        <el-form-item size="medium" label="标签名">
+          <el-input v-model="dormData.dormAddress" placeholder="标签名"></el-input>
         </el-form-item>
-        <el-form-item size="medium" label="宿舍编号">
-          <el-input v-model="dormData.dormNum" placeholder="宿舍编号"></el-input>
+        <el-form-item size="medium" label="描述">
+          <el-input v-model="dormData.dormNum" placeholder="描述"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">

@@ -24,6 +24,34 @@
         <el-form-item label="竞赛奖项" prop="value">
           <el-input v-model="form.value" clearable style="width:570px"></el-input>
         </el-form-item>
+        <!-- 获奖日期 -->
+        <el-form-item label="获奖日期">
+          <el-date-picker v-model="form.date" type="date"></el-date-picker>
+        </el-form-item>
+
+        <!-- 颁发单位 -->
+        <el-form-item label="颁发单位">
+          <el-input v-model="form.organization"></el-input>
+        </el-form-item>
+
+        <!-- 描述 -->
+        <el-form-item label="描述">
+          <el-input type="textarea" v-model="form.description"></el-input>
+        </el-form-item>
+
+        <!-- 类别（枚举值） -->
+        <el-form-item label="类别">
+          <el-select v-model="form.category">
+            <el-option label="艺术审美" value="艺术审美"></el-option>
+            <el-option label="数学" value="数学"></el-option>
+            <el-option label="计算机" value="计算机"></el-option>
+            <el-option label="体育" value="体育"></el-option>
+            <el-option label="互联网" value="互联网"></el-option>
+            <el-option label="硬件" value="硬件"></el-option>
+            <el-option label="英语" value="英语"></el-option>
+            <el-option label="语言文学" value="语言文学"></el-option>
+          </el-select>
+        </el-form-item>
         <!-- 添加上传奖项证明文件的模块 -->
         <el-form-item label="上传证明" prop="awardProof">
           <!-- 这里应替换为您的上传处理URL -->
@@ -65,10 +93,14 @@ export default {
           myHeaders: {token: sessionStorage.getItem('token')},
             submitLoading: false,
             form: {
+                name: "",
                 level: "",
                 title: "",
-                value: "",
-                image: ""
+                date: "",
+                organization: "",
+                description: "",
+                category: "",
+                proofImageUrl: ""
             },
             formValidate: {}
         };
@@ -79,8 +111,8 @@ export default {
       handleAvatarSuccess(response, file) {
           console.log(response);
           console.log(file);
-        this.form.image = this.form.image + ',' + response.result.image; // 假设返回的数据结构中包含url字段
-        console.log(this.form.image);
+        this.form.proofImageUrl = this.form.proofImageUrl + ',' + response.result.proofImageUrl; // 假设返回的数据结构中包含url字段
+        console.log(this.form.proofImageUrl);
       },
         handleReset() {
             this.$refs.form.resetFields();

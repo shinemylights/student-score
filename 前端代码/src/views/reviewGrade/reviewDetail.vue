@@ -2,7 +2,7 @@
   <div>
     <el-steps :active="reviewData.length" simple finish-status="success" class="steps">
       <el-step title="学生申请" ></el-step>
-      <el-step title="教师审核"></el-step>
+<!--      <el-step title="教师审核"></el-step>-->
       <el-step title="管理员审核" ></el-step>
     </el-steps>
 
@@ -27,12 +27,12 @@
           </div>
 
           <div v-else-if="item.type==='teacher'">
-            <h4>教师审批</h4>
+            <h4>管理员审批</h4>
             <h4 style="float: right">{{item.state}}</h4>
-            <p><el-tag style="margin-right: 10px">教师</el-tag>{{item.teaId}} 审批于 {{item.date}}</p>
+            <p><el-tag style="margin-right: 10px">管理员</el-tag>{{item.teaId}} 审批于 {{item.date}}</p>
             <el-collapse>
               <el-collapse-item title="详细信息" name="1">
-                <div v-show="item.state==='教师审核通过'">
+                <div v-show="item.state==='管理员审核通过'">
 <!--                  <el-tag type="warning" style="margin-right: 10px">成绩更改</el-tag>-->
 <!--                  <span><el-tag>{{item.oldGrade}}</el-tag> -&#45;&#45;&#45;&#45; 变更为 -&#45;&#45;&#45;&#45; <el-tag>{{item.newGrade}}</el-tag></span>-->
                 </div>

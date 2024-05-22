@@ -14,11 +14,11 @@
           <el-form-item size="medium" label="真实姓名" v-if="showData.realName">
             <el-input v-model="formData.realName" placeholder="真实姓名"></el-input>
           </el-form-item>
-          <el-form-item size="medium" label="宿舍地址" v-if="showData.dormAddress">
-            <el-input v-model="formData.dormAddress" placeholder="宿舍地址"></el-input>
+          <el-form-item size="medium" label="标签名" v-if="showData.dormAddress">
+            <el-input v-model="formData.dormAddress" placeholder="标签名"></el-input>
           </el-form-item>
-          <el-form-item size="medium" label="宿舍编号" v-if="showData.dormNum">
-            <el-input v-model="formData.dormNum" placeholder="宿舍编号"></el-input>
+          <el-form-item size="medium" label="描述" v-if="showData.dormNum">
+            <el-input v-model="formData.dormNum" placeholder="描述"></el-input>
           </el-form-item>
           <el-form-item size="medium" label="学号" v-if="showData.stuId">
             <el-input v-model="formData.stuId" placeholder="学号"></el-input>

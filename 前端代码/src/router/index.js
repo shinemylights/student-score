@@ -248,6 +248,38 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/tag',
+    name: 'tag',
+    component: Layout,
+    meta: {
+      title: '标签管理',
+      icon: '#icon-sushe',
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'tagList',
+        name: 'tagList',
+        component: () => import('@/views/student/dormList'),
+        meta: {
+          title: '标签管理',
+          icon: '#icon-xuesheng',
+          roles: ['admin']
+        }
+      },
+      {
+        path: 'couAdd',
+        name: 'couAdd',
+        component: () => import('@/views/course/couAdd'),
+        meta: {
+          title: '绑定课程',
+          icon: '#icon-zizhuxuanke',
+          roles: ['teacher','admin']
+        }
+      }
+    ]
+  },
+  {
     path: '/teacher',
     component: Layout,
     children: [
@@ -313,12 +345,12 @@ export const asyncRoutes = [
   //   ]
   // },
 
-  //教师独有
+  // 教师独有
   {
     path: '/courseBind',
     component: Layout,
     meta: {
-      title: '课程管理',
+      title: '绑定课程',
       icon: '#icon-kechengxinxi',
       roles: ['teacher']
     },
@@ -335,7 +367,7 @@ export const asyncRoutes = [
       }
     ]
   },
-  //成绩复核
+  // 成绩复核
   {
     path: '/reviewGrade',
     component: Layout,
@@ -362,9 +394,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
-
-  //课堂管理
+  // 课堂管理
   // {
   //   path: '/classRoom',
   //   component: Layout,
@@ -415,7 +445,6 @@ export const asyncRoutes = [
   //     }
   //   ]
   // },
-
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Data
 public class UploadResult implements Serializable {
 
-    private String image;
+    private String proofImageUrl;
 
 
 }

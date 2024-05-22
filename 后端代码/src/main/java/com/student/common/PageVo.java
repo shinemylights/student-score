@@ -34,8 +34,8 @@ public class PageVo implements Serializable {
     private String level;
 
     @ApiModelProperty(value = "竞赛名称")
-    private String title;
+    private String name;
 
     @ApiModelProperty(value = "竞赛奖项")
-    private String value;
+    private String title;
 }
