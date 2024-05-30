@@ -77,7 +77,8 @@ public class ReviewService {
             if(user.getRoleId()!=3){
                 return Result.succ(reviewGradeService.page(page,new QueryWrapper<StReviewGrade>().eq("tea_id",user.getUsername())));
             }else {
-                return Result.succ(reviewGradeService.page(page));
+                IPage<StReviewGrade> page1 = reviewGradeService.page(page);
+                return Result.succ(page1);
             }
         }
     }

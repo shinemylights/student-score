@@ -1,5 +1,7 @@
 package com.student.servie;
 
+import com.student.common.Result;
+import com.student.common.model.AuditRequest;
 import com.student.dao.entity.Contest;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,5 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2024-05-22 23:03:46
 */
 public interface ContestService extends IService<Contest> {
+
+    Result getAuditList(AuditRequest request);
 
 }

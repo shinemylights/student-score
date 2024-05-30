@@ -93,6 +93,9 @@ public class ContestController {
         // return new ResultUtil<Competition>().setData(competition);
     }
 
+
+
+
     @RequestMapping(value = "/getMyPage", method = RequestMethod.POST)
     @ApiOperation(value = "查询我的学科竞赛")
     public Result<IPage<Contest>> getMyPage(@RequestBody PageVo page){

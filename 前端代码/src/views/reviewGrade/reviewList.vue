@@ -12,7 +12,7 @@
       </el-table-column>
       <el-table-column
         prop="teaId"
-        label="教师编号"
+        label="学生姓名"
         width="180">
       </el-table-column>
       <el-table-column
