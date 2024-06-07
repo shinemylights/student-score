@@ -64,7 +64,7 @@ public class Contest implements Serializable {
     /**
      * 
      */
-    private Integer studentId;
+    private String studentId;
 
     /**
      * 
@@ -79,7 +79,7 @@ public class Contest implements Serializable {
     /**
      * 
      */
-    private Object approvalStatus;
+    private String approvalStatus;
 
     /**
      * 

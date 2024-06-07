@@ -1,7 +1,7 @@
 let base = 'http://localhost:8083';
 import axios from 'axios'
 export const getCompetitionOne = (params) => {
-  let url = '/competition/insert'
+  let url = '/contest/insert'
   // let accessToken = getStore('accessToken');
   let accessToken = ''
   return axios({
@@ -15,7 +15,7 @@ export const getCompetitionOne = (params) => {
 }
 export const getCompetitionList = (params) => {
   console.info(params);
-  let url = '/competition/getMyPage'
+  let url = '/contest/getMyPage'
   // let accessToken = getStore('accessToken');
   // let accessToken = ''
   return axios({
@@ -28,7 +28,7 @@ export const getCompetitionList = (params) => {
   });
 }
 export const getCompetitionCount = (params) => {
-  let url = '/competition/insert'
+  let url = '/contest/insert'
   // let accessToken = getStore('accessToken');
   let accessToken = ''
   return axios({
@@ -42,7 +42,7 @@ export const getCompetitionCount = (params) => {
 }
   export const addCompetition = (params) => {
     console.log("进入了添加方法")
-    let url = '/competition/insert'
+    let url = '/contest/insert'
     // let accessToken = getStore('accessToken');
     // let accessToken = ''
     return axios({
@@ -55,7 +55,7 @@ export const getCompetitionCount = (params) => {
     });
   }
   export const editCompetition = (params) => {
-    let url = '/competition/insert'
+    let url = '/contest/insert'
     // let accessToken = getStore('accessToken');
     let accessToken = ''
     return axios({
@@ -68,7 +68,7 @@ export const getCompetitionCount = (params) => {
     });
   }
   export const addOrEditCompetition = (params) => {
-    let url = '/competition/insert'
+    let url = '/contest/insert'
     // let accessToken = getStore('accessToken');
     let accessToken = ''
     return axios({
@@ -81,7 +81,7 @@ export const getCompetitionCount = (params) => {
     });
   }
   export const deleteCompetition = (params) => {
-    let url = '/competition/insert'
+    let url = '/contest/insert'
     // let accessToken = getStore('accessToken');
     let accessToken = ''
     return axios({

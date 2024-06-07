@@ -54,20 +54,20 @@
           <span>{{  scope.row.dorm.length===1?'待完善': scope.row.dorm[1]+ scope.row.dorm[2] }}</span>
         </template>
       </el-table-column>
-      <el-table-column
-        label="手机号"
-        width="120">
-        <template slot-scope="scope">
-          <span>{{ scope.row.phoneNum }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column
-        label="身份证号码"
-        width="180">
-        <template slot-scope="scope">
-          <span>{{ scope.row.idCard }}</span>
-        </template>
-      </el-table-column>
+<!--      <el-table-column-->
+<!--        label="手机号"-->
+<!--        width="120">-->
+<!--        <template slot-scope="scope">-->
+<!--          <span>{{ scope.row.phoneNum }}</span>-->
+<!--        </template>-->
+<!--      </el-table-column>-->
+<!--      <el-table-column-->
+<!--        label="身份证号码"-->
+<!--        width="180">-->
+<!--        <template slot-scope="scope">-->
+<!--          <span>{{ scope.row.idCard }}</span>-->
+<!--        </template>-->
+<!--      </el-table-column>-->
       <el-table-column
         label="性别"
         width="90">
@@ -84,6 +84,13 @@
             size="mini"
             type="danger"
             @click="delTea(scope.row.id)">删除</el-button>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作" width="160">
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            @click="navigateToStudentProfile">学生画像</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -259,6 +266,10 @@ export default {
       this.stuDialog = false;
       this.stuData={};
       await this.changePage(this.current)
+    },
+    navigateToStudentProfile() {
+      // 假设您已经在Vue Router中定义了一个名为'studentProfile'的路由
+      this.$router.push({ name: 'teaRadar' });
     }
   }
 }

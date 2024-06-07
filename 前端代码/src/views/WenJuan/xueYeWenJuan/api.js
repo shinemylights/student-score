@@ -1,7 +1,16 @@
-// import { getRequest, postRequest, putRequest, postBodyRequest, getNoAuthRequest, postNoAuthRequest } from '@/libs/axios';
+let base = 'http://localhost:8083';
+import axios from 'axios'
 
 export const saveOneByType = (params) => {
-    // return getRequest('/questionnaire/saveOneByType', params)
+  let url = '/wenjuan/save'
+  return axios({
+    method: 'get',
+    url: `${base}${url}`,
+    params: params,
+    headers: {
+      'token': sessionStorage.getItem('token')
+    }
+  });
 }
 export const getOneByType = (params) => {
     // return getRequest('/questionnaire/getOneByType', params)

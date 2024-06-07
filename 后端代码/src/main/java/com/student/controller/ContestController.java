@@ -24,17 +24,18 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author lxy
  * @date 2024/5/22 23:07
  */
 @RestController
-@RequestMapping("/acompetition")
+@RequestMapping("/contest")
 public class ContestController {
 
     //头像图片上传地址
-    @Value("E:/")
+    @Value("E:/myImages/")
     private String imgFile;
 
     @Autowired
@@ -78,7 +79,8 @@ public class ContestController {
         // StudentEvaluate se = evaluateUtils.getMyStudentEvaluate();
         // competition.setEvaluateId(se.getId());
         StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
-        contest.setStudentId(Math.toIntExact(currUser.getId()));
+        contest.setStudentId(currUser.getUsername());
+        contest.setStudentName(currUser.getRealName());
         contest.setProofImageUrl(contest.getProofImageUrl().substring(1));
         contestService.save(contest);
         return new ResultUtil<Contest>().setData(contest);
@@ -111,7 +113,7 @@ public class ContestController {
         //     se = evaluateList.get(0);
         // }
         QueryWrapper<Contest> qw = new QueryWrapper<>();
-        qw.eq("student_id",currUser.getId());
+        qw.eq("student_id",currUser.getUsername());
         if(!ZwzNullUtils.isNull(page.getLevel())) {
             qw.like("level",page.getLevel());
         }
@@ -123,6 +125,19 @@ public class ContestController {
         }
         List<Contest> contestList = contestService.list(qw);
         IPage<Contest> data = contestService.page(PageUtil.initMpPage(page),qw);
+        List<Contest> collect = data.getRecords().stream().map(t -> {
+            String status = t.getApprovalStatus();
+            if ("0".equals(status)) {
+                status = "未审核";
+            } else if ("1".equals(status)) {
+                status = "通过";
+            } else {
+                status = "未通过";
+            }
+            t.setApprovalStatus(status);
+            return t;
+        }).collect(Collectors.toList());
+        data.setRecords(collect);
         System.out.println(data);
         return new ResultUtil<IPage<Contest>>().setData(data);
 

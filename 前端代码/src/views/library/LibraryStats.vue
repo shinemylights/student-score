@@ -92,7 +92,7 @@ const avgTimePerMonth = [
 // 提取'avgTime'字段
 const avgTimePerMonthData = avgTimePerMonth.map(item => item.avgTime);
 
-const categories = ['Fiction', 'Non-Fiction', 'Science', 'History', 'Children', 'Mystery', 'Fantasy'];
+const categories = ['科幻', '现实', '科学', '历史', '童话', '神秘', '奇幻'];
 const bookCategories = categories.map((category, index) => ({
   category,
   count: Math.floor(Math.random() * 100) + 10, // 假设每种类别至少有10本被借阅
@@ -156,7 +156,7 @@ export default {
       const option = {
         xAxis: {
           type: 'category',
-          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
         },
         yAxis: {
           type: 'value',
@@ -176,7 +176,7 @@ export default {
       const option = {
         xAxis: {
           type: 'category',
-          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
         },
         yAxis: {
           type: 'value',

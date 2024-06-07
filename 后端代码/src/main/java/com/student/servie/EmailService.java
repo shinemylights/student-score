@@ -35,7 +35,7 @@ public class EmailService {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
             //设置邮件基本信息
-            mimeMessageHelper.setSubject("欢迎来到李同学的学生成绩管理系统：个人账号注册");
+            mimeMessageHelper.setSubject("欢迎来到学生画像评价系统：个人账号注册");
             mimeMessageHelper.setFrom(sendEmailName);
             mimeMessageHelper.setTo(email);
             mimeMessageHelper.setSentDate(new Date());

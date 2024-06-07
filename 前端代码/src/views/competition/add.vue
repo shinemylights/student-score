@@ -18,11 +18,11 @@
             <el-option label="校级" value="校级"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="竞赛名称" prop="title">
-          <el-input v-model="form.title" clearable style="width:570px"></el-input>
+        <el-form-item label="竞赛名称" prop="name">
+          <el-input v-model="form.name" clearable style="width:570px"></el-input>
         </el-form-item>
-        <el-form-item label="竞赛奖项" prop="value">
-          <el-input v-model="form.value" clearable style="width:570px"></el-input>
+        <el-form-item label="竞赛奖项" prop="title">
+          <el-input v-model="form.title" clearable style="width:570px"></el-input>
         </el-form-item>
         <!-- 获奖日期 -->
         <el-form-item label="获奖日期">
@@ -57,7 +57,7 @@
           <!-- 这里应替换为您的上传处理URL -->
           <el-upload
             class="upload-demo"
-            action="http://localhost:8083/competition/upEvidence"
+            action="http://localhost:8083/contest/upEvidence"
             :headers="myHeaders"
           :on-preview="handlePreview"
           :on-remove="handleRemove"

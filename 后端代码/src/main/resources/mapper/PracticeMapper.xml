@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.dao.mapper.PracticeMapper">
+
+    <resultMap id="BaseResultMap" type="com.student.dao.entity.Practice">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="NAME" jdbcType="VARCHAR"/>
+            <result property="startDate" column="start_date" jdbcType="DATE"/>
+            <result property="endDate" column="end_date" jdbcType="DATE"/>
+            <result property="organization" column="organization" jdbcType="VARCHAR"/>
+            <result property="level" column="level" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="proofImageUrl" column="proof_image_url" jdbcType="VARCHAR"/>
+            <result property="studentId" column="student_id" jdbcType="INTEGER"/>
+            <result property="studentName" column="student_name" jdbcType="VARCHAR"/>
+            <result property="submissionDate" column="submission_date" jdbcType="DATE"/>
+            <result property="approvalStatus" column="approval_status" jdbcType="CHAR"/>
+            <result property="approverId" column="approver_id" jdbcType="INTEGER"/>
+            <result property="approvalDate" column="approval_date" jdbcType="DATE"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,NAME,start_date,
+        end_date,organization,level,
+        description,proof_image_url,student_id,
+        student_name,submission_date,approval_status,
+        approver_id,approval_date,remarks
+    </sql>
+</mapper>

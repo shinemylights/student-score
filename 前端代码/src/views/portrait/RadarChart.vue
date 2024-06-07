@@ -42,11 +42,11 @@ export default {
           {
             indicator: [
               { text: '数学与自然科学', max: 10 },
-              { text: '人文', max: 10 },
+              { text: '语言文学', max: 10 },
               { text: '专业基础', max: 10 },
               { text: '专业选修', max: 10 },
               { text: '工程实践', max: 10 },
-              { text: '创新能力', max: 10 }
+              { text: '思想政治', max: 10 }
             ],
             center: ['45%', '50%'],
             radius: 160,
@@ -106,7 +106,7 @@ export default {
       barChart.setOption({
         xAxis: {
           type: 'category',
-          data: ['数学', '人文', '专业基础', '专业选修', '工程实践', '创新能力']
+          data: ['数学', '语言文学', '专业基础', '专业选修', '工程实践', '思想政治']
         },
         yAxis: {
           type: 'value'

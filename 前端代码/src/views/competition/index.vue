@@ -15,10 +15,10 @@
                         </Select>
                     </Form-item>
                     <Form-item label="" prop="title">
-                        <Input type="text" v-model="searchForm.title" placeholder="请输入竞赛名称" clearable style="width: 200px" />
+                        <Input type="text" v-model="searchForm.name" placeholder="请输入竞赛名称" clearable style="width: 200px" />
                     </Form-item>
                     <Form-item label="" prop="value">
-                        <Input type="text" v-model="searchForm.value" placeholder="请输入竞赛奖项" clearable style="width: 200px" />
+                        <Input type="text" v-model="searchForm.title" placeholder="请输入竞赛奖项" clearable style="width: 200px" />
                     </Form-item>
                     <Form-item style="margin-left:10px;" class="br">
                         <Button @click="handleSearch" type="primary" icon="ios-search" size="small" ghost>搜索</Button>
@@ -84,11 +84,11 @@ export default {
                 "序号",
                 "竞赛级别",
                 "竞赛名称",
-                "竞赛奖项",
-                "创建时间",
-                "创建者",
-                "修改时间",
-                "修改者",
+                "所获奖项",
+                "组织单位",
+                "获奖时间",
+                "类别",
+                "审核状态",
                 "操作",
             ],
             modal1: false,
@@ -102,7 +102,7 @@ export default {
                 pageSize: 15,
                 title: "",
                 level: "",
-                value: "",
+                name: "",
                 sort: "createTime",
                 order: "desc",
             },
@@ -141,21 +141,21 @@ export default {
                 },
                 {
                     title: "竞赛名称",
+                    key: "name",
+                    minWidth: 120,
+                    tooltip: true,
+                    sortable: false,
+                },
+                {
+                    title: "所获奖项",
                     key: "title",
                     minWidth: 120,
                     tooltip: true,
                     sortable: false,
                 },
                 {
-                    title: "竞赛奖项",
-                    key: "value",
-                    minWidth: 120,
-                    tooltip: true,
-                    sortable: false,
-                },
-                {
-                    title: "创建时间",
-                    key: "createTime",
+                    title: "组织单位",
+                    key: "organization",
                     sortable: true,
                     sortType: "desc",
                     minWidth: 180,
@@ -163,8 +163,8 @@ export default {
                     tooltip: true,
                 },
                 {
-                    title: "创建者",
-                    key: "createBy",
+                    title: "获奖时间",
+                    key: "date",
                     sortable: true,
                     sortType: "desc",
                     minWidth: 100,
@@ -172,15 +172,15 @@ export default {
                     tooltip: true,
                 },
                 {
-                    title: "修改时间",
-                    key: "updateTime",
+                    title: "类别",
+                    key: "category",
                     minWidth: 180,
                     align: "center",
                     tooltip: true,
                 },
                 {
-                    title: "修改者",
-                    key: "updateBy",
+                    title: "审核状态",
+                    key: "approvalStatus",
                     minWidth: 100,
                     align: "center",
                     tooltip: true,

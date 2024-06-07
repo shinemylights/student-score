@@ -23,7 +23,7 @@ spring:
     # 超时时间，单位毫秒
     timeout: 3000
     # 数据库编号
-    database: 0
+    database: 2
     # 配置lettuce
     lettuce:
       pool:

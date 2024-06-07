@@ -53,7 +53,7 @@ export const asyncRoutes = [
     component: Layout,
     meta: {
       title: '学生画像',
-      icon: '#icon-fenxi',
+      icon: '#icon-_xuesheng',
       roles: ['student']
     },
     children: [
@@ -63,7 +63,7 @@ export const asyncRoutes = [
         component: () => import('@/views/portrait/RadarChart.vue'),
         meta: {
           title: '雷达图',
-          icon: '#icon-fenxi',
+          icon: '#icon-xuekepaiming',
           roles: ['student']
         }
       },
@@ -73,6 +73,16 @@ export const asyncRoutes = [
         component: () => import('@/views/portrait/WordCloud.vue'),
         meta: {
           title: '词云图',
+          icon: '#icon-icon-user',
+          roles: ['student']
+        }
+      },
+      {
+        path: '/library/LibraryStats',
+        name: '/library/LibraryStats',
+        component: () => import('@/views/library/LibraryStats'),
+        meta: {
+          title: '图书馆学习画像',
           icon: '#icon-fenxi',
           roles: ['student']
         }
@@ -80,88 +90,88 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: '/competition',
+    path: '/declare',
     component: Layout,
     meta: {
-      title: '竞赛',
-      icon: '#icon-js',
+      title: '综合申报',
+      icon: '#icon-zhuangxiangfuhe',
       roles: ['student']
     },
     children: [
       {
-        path: 'index',
+        path: '/competition/index',
         name: 'index',
         component: () => import('@/views/competition/index'),
         meta: {
-          title: '竞赛信息',
-          icon: '#icon-jsinfo',
+          title: '竞赛获奖',
+          icon: '#icon-web__zhuanye',
           roles: ['student']
         }
-      }
-    ]
-  },
-  {
-    path: '/library',
-    component: Layout,
-    meta: {
-      title: '竞赛',
-      icon: '#icon-js',
-      roles: ['student']
-    },
-    children: [
+      },
       {
-        path: 'LibraryStats',
-        name: 'LibraryStats',
-        component: () => import('@/views/library/LibraryStats'),
+        path: 'practice',
+        name: 'practice',
+        component: () => import('@/views/declare/practice/index'),
         meta: {
-          title: '图书馆出入',
-          icon: '#icon-jsinfo',
+          title: '社会实践',
+          icon: '#icon-xuesheng',
+          roles: ['student']
+        }
+      },
+      {
+        path: 'skill',
+        name: 'skill',
+        component: () => import('@/views/declare/skill/index'),
+        meta: {
+          title: '技能特长',
+          icon: '#icon-icon-user',
           roles: ['student']
         }
       },
     ]
   },
-  {
-    path: '/WenJuan',
-    component: Layout,
-    meta: {
-      title: '问卷',
-      icon: '#icon-js',
-      roles: ['student']
-    },
-    children: [
-      {
-        path: 'pinDeWenJuan',
-        name: 'pinDeWenJuan',
-        component: () => import('@/views/WenJuan/pinDeWenJuan/index'),
-        meta: {
-          title: '品德自评问卷',
-          icon: '#icon-jsinfo',
-          roles: ['student']
-        }
-      },
-      {
-        path: 'shenXinWenJuan',
-        name: 'shenXinWenJuan',
-        component: () => import('@/views/WenJuan/shenXinWenJuan/index'),
-        meta: {
-          title: '身心自评问卷',
-          icon: '#icon-jsinfo',
-          roles: ['student']
-        }
-      },
-      {
-        path: 'xueYeWenJuan',
-        name: 'xueYeWenJuan',
-        component: () => import('@/views/WenJuan/xueYeWenJuan/index'),
-        meta: {
-          title: '学业自评问卷',
-          icon: '#icon-jsinfo',
-          roles: ['student']
-        }
-      }
-    ]
-  },
+  // {
+  //   path: '/competition',
+  //   component: Layout,
+  //   meta: {
+  //     title: '竞赛',
+  //     icon: '#icon-js',
+  //     roles: ['student']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'index',
+  //       component: () => import('@/views/competition/index'),
+  //       meta: {
+  //         title: '竞赛信息',
+  //         icon: '#icon-jsinfo',
+  //         roles: ['student']
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/library',
+  //   component: Layout,
+  //   meta: {
+  //     title: '竞赛',
+  //     icon: '#icon-js',
+  //     roles: ['student']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'LibraryStats',
+  //       name: 'LibraryStats',
+  //       component: () => import('@/views/library/LibraryStats'),
+  //       meta: {
+  //         title: '图书馆出入',
+  //         icon: '#icon-jsinfo',
+  //         roles: ['student']
+  //       }
+  //     },
+  //   ]
+  // },
   {
     path: '/score',
     component: Layout,
@@ -211,7 +221,48 @@ export const asyncRoutes = [
           icon: '#icon-fenxi',
           roles: ['student']
         }
+      }
+    ]
+  },
+  {
+    path: '/WenJuan',
+    component: Layout,
+    meta: {
+      title: '自评问卷',
+      icon: '#icon-zizhuxuanke',
+      roles: ['student']
+    },
+    children: [
+      {
+        path: 'pinDeWenJuan',
+        name: 'pinDeWenJuan',
+        component: () => import('@/views/WenJuan/pinDeWenJuan/index'),
+        meta: {
+          title: '品德自评问卷',
+          icon: '#icon-kechengxinxi',
+          roles: ['student']
+        }
       },
+      {
+        path: 'shenXinWenJuan',
+        name: 'shenXinWenJuan',
+        component: () => import('@/views/WenJuan/shenXinWenJuan/index'),
+        meta: {
+          title: '身心自评问卷',
+          icon: '#icon-kechengxinxi',
+          roles: ['student']
+        }
+      },
+      {
+        path: 'xueYeWenJuan',
+        name: 'xueYeWenJuan',
+        component: () => import('@/views/WenJuan/xueYeWenJuan/index'),
+        meta: {
+          title: '学业自评问卷',
+          icon: '#icon-kechengxinxi',
+          roles: ['student']
+        }
+      }
     ]
   },
 
@@ -235,16 +286,86 @@ export const asyncRoutes = [
           roles: ['admin']
         }
       },
-      // {
-      //   path: 'dormList',
-      //   name: 'dormList',
-      //   component: () => import('@/views/student/dormList'),
-      //   meta: {
-      //     title: '宿舍信息',
-      //     icon: '#icon-sushe',
-      //     roles: ['admin']
-      //   }
-      // }
+      {
+        path: 'teaRadar',
+        name: 'teaRadar',
+        component: () => import('@/views/teaPortrait/RadarChart.vue'),
+        meta: {
+          title: '雷达图',
+          icon: '#icon-xuekepaiming',
+          roles: ['admin']
+        }
+      }
+      ]},
+  {
+    path: '/audit',
+    component: Layout,
+    meta: {
+      title: '申报管理',
+      icon: '#icon-sushe',
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: '/competition/auditList',
+        name: 'auditList',
+        component: () => import('@/views/audit/competition/auditList.vue'),
+        meta: {
+          title: '奖项审核',
+          icon: '#icon-zhuangxiangfuhe',
+          roles: ['teacher','admin']
+        }
+      },
+      {
+        hidden: true,
+        path: '/competition/auditDetail',
+        name: 'compauditDetail',
+        component: () => import('@/views/audit/competition/auditDetail.vue'),
+        meta: {
+          title: '奖项复核详情',
+          roles: ['teacher','admin','student']
+        }
+      },
+      {
+        path: '/practice/auditList',
+        name: 'auditList',
+        component: () => import('@/views/audit/practice/auditList.vue'),
+        meta: {
+          title: '社会实践审核',
+          icon: '#icon-zhuangxiangfuhe',
+          roles: ['teacher','admin']
+        }
+      },
+      {
+        hidden: true,
+        path: '/practice/auditDetail',
+        name: 'pracauditDetail',
+        component: () => import('@/views/audit/practice/auditDetail.vue'),
+        meta: {
+          title: '社会实践详情',
+          roles: ['teacher','admin','student']
+        }
+      },
+      {
+        path: '/skill/auditList',
+        name: 'auditList',
+        component: () => import('@/views/audit/skill/auditList.vue'),
+        meta: {
+          title: '技能特长审核',
+          icon: '#icon-zhuangxiangfuhe',
+          roles: ['teacher','admin']
+        }
+      },
+      {
+        hidden: true,
+        path: '/skill/auditDetail',
+        name: 'skillauditDetail',
+        component: () => import('@/views/audit/skill/auditDetail.vue'),
+        meta: {
+          title: '技能特长详情',
+          roles: ['teacher','admin','student']
+        }
+      }
     ]
   },
   {
@@ -260,25 +381,54 @@ export const asyncRoutes = [
       {
         path: 'tagList',
         name: 'tagList',
-        component: () => import('@/views/student/dormList'),
+        component: () => import('@/views/tag/tagList'),
         meta: {
           title: '标签管理',
           icon: '#icon-xuesheng',
           roles: ['admin']
         }
-      },
-      {
-        path: 'couAdd',
-        name: 'couAdd',
-        component: () => import('@/views/course/couAdd'),
-        meta: {
-          title: '绑定课程',
-          icon: '#icon-zizhuxuanke',
-          roles: ['teacher','admin']
-        }
       }
+      // {
+      //   path: 'couAdd',
+      //   name: 'couAdd',
+      //   component: () => import('@/views/course/couAdd'),
+      //   meta: {
+      //     title: '绑定课程',
+      //     icon: '#icon-zizhuxuanke',
+      //     roles: ['teacher','admin']
+      //   }
+      // }
     ]
   },
+      {
+        path: '/WenJuan',
+        component: Layout,
+        meta: {
+          title: '问卷得分',
+          icon: '#icon-_xuesheng',
+          roles: ['admin']
+        },
+        children: [
+          {
+            path: 'wenJuanScores',
+            name: 'stuList',
+            component: () => import('@/views/WenJuan/wenJuanScores'),
+            meta: {
+              title: '问卷得分',
+              icon: '#icon-xuesheng',
+              roles: ['admin']
+            }
+          }]},
+      // {
+      //   path: 'dormList',
+      //   name: 'dormList',
+      //   component: () => import('@/views/student/dormList'),
+      //   meta: {
+      //     title: '宿舍信息',
+      //     icon: '#icon-sushe',
+      //     roles: ['admin']
+      //   }
+      // }
   {
     path: '/teacher',
     component: Layout,
@@ -368,32 +518,6 @@ export const asyncRoutes = [
     ]
   },
   // 成绩复核
-  {
-    path: '/reviewGrade',
-    component: Layout,
-    children: [
-      {
-        path: 'reviewList',
-        name: 'reviewList',
-        component: () => import('@/views/reviewGrade/reviewList'),
-        meta: {
-          title: '奖项复核列表',
-          icon: '#icon-zhuangxiangfuhe',
-          roles: ['teacher','admin']
-        }
-      },
-      {
-        hidden: true,
-        path: 'reviewDetail',
-        name: 'reviewDetail',
-        component: () => import('@/views/reviewGrade/reviewDetail'),
-        meta: {
-          title: '奖项复核详情',
-          roles: ['teacher','admin','student']
-        }
-      }
-    ]
-  },
   // 课堂管理
   // {
   //   path: '/classRoom',
