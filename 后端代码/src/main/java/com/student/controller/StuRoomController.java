@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @RestController
 @RequiresRoles(logical = Logical.OR, value = {"student", "admin"})

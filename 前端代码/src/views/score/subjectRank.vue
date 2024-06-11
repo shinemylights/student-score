@@ -58,6 +58,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.el-card {
+  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.el-table {
+  font-size: 22px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.custom-table .el-table__body {
+  font-size: 20px !important; /* 调整为你希望的字体大小 */
+}
 
 </style>
 

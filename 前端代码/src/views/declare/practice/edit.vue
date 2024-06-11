@@ -13,19 +13,17 @@
       </span>
     </div>
     <el-form ref="form" :model="form" :rules="formValidate" label-width="100px" label-position="left">
-      <el-form-item label="竞赛级别" prop="level">
-        <el-select v-model="form.level" style="width: 570px;">
-          <el-option label="国家级" value="国家级"></el-option>
-          <el-option label="省级" value="省级"></el-option>
-          <el-option label="市级" value="市级"></el-option>
-          <el-option label="校级" value="校级"></el-option>
-        </el-select>
+      <el-form-item label="名称" prop="level">
+        <el-input v-model="form.name" clearable style="width: 570px;"></el-input>
       </el-form-item>
-      <el-form-item label="竞赛名称" prop="title">
-        <el-input v-model="form.title" clearable style="width: 570px;"></el-input>
+      <el-form-item label="实践单位" prop="title">
+        <el-input v-model="form.organization" clearable style="width: 570px;"></el-input>
       </el-form-item>
-      <el-form-item label="竞赛奖项" prop="value">
-        <el-input v-model="form.value" clearable style="width: 570px;"></el-input>
+      <el-form-item label="起始时间" prop="value">
+        <el-input v-model="form.startDate" clearable style="width: 570px;"></el-input>
+      </el-form-item>
+      <el-form-item label="结束时间" prop="value">
+        <el-input v-model="form.endDate" clearable style="width: 570px;"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="handleSubmit" :loading="submitLoading">提交并保存</el-button>

@@ -85,14 +85,7 @@ public class ContestController {
         contestService.save(contest);
         return new ResultUtil<Contest>().setData(contest);
 
-        // competition.setEvaluateId(currUser.getId().toString());
-        // competition.setId(UUID.randomUUID().toString());
-        // competition.setImage(competition.getImage().substring(1));
-        // System.out.println(competition);
-        // iCompetitionService.saveOrUpdate(competition);
-        //
-        // // calGrades(se);
-        // return new ResultUtil<Competition>().setData(competition);
+
     }
 
 
@@ -102,16 +95,7 @@ public class ContestController {
     @ApiOperation(value = "查询我的学科竞赛")
     public Result<IPage<Contest>> getMyPage(@RequestBody PageVo page){
         StUser currUser = (StUser) SecurityUtils.getSubject().getPrincipal();
-        // QueryWrapper<StudentEvaluate> seQw = new QueryWrapper<>();
-        // seQw.eq("user_id",currUser.getId());
-        // List<StudentEvaluate> evaluateList = iStudentEvaluateService.list(seQw);
-        // StudentEvaluate se = null;
-        // if(evaluateList.size() < 1) {
-        //     se = EvaluateUtils.getBlackStudentEvaluate(currUser.getId());
-        //     iStudentEvaluateService.saveOrUpdate(se);
-        // } else {
-        //     se = evaluateList.get(0);
-        // }
+
         QueryWrapper<Contest> qw = new QueryWrapper<>();
         qw.eq("student_id",currUser.getUsername());
         if(!ZwzNullUtils.isNull(page.getLevel())) {
@@ -142,12 +126,7 @@ public class ContestController {
         return new ResultUtil<IPage<Contest>>().setData(data);
 
 
-        // List<Competition> list = iCompetitionService.list(qw);
-        // System.out.println(list);
-        // // System.out.println(competition);
-        // IPage<Competition> data = iCompetitionService.page(PageUtil.initMpPage(page),qw);
-        // System.out.println(data);
-        // return new ResultUtil<IPage<Competition>>().setData(data);
+
     }
 
     @RequestMapping(value = "/getOne", method = RequestMethod.GET)

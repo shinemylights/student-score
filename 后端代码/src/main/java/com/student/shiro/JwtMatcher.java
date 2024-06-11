@@ -6,7 +6,7 @@ import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.springframework.stereotype.Component;
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @Component
 public class JwtMatcher implements CredentialsMatcher {

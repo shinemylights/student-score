@@ -3,7 +3,7 @@ import com.baomidou.mybatisplus.annotation.EnumValue;
 
 /**
  * 开课状态的枚举类
- * @author 李123
+ * @author 廖123
  */
 public enum couEnum {
     /**

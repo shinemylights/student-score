@@ -33,19 +33,6 @@ public class WenJuanController {
     @Autowired
     private WenjuanService wenjuanService;
 
-    // @RequestMapping(value = "/getOneByType", method = RequestMethod.GET)
-    // @ApiOperation(value = "根据类型查询学生的单个问卷")
-    // public Result<List<String>> getOneByType(@RequestParam int type){
-    //     StudentEvaluate se = evaluateUtils.getMyStudentEvaluate();
-    //     QueryWrapper<Questionnaire> qw = new QueryWrapper<>();
-    //     qw.eq("evaluate_id",se.getId());
-    //     qw.eq("type",type);
-    //     List<Questionnaire> questionnaireList = iQuestionnaireService.list(qw);
-    //     if(questionnaireList.size() < 1) {
-    //         return new ResultUtil<List<String>>().setData(new ArrayList<>());
-    //     }
-    //     return new ResultUtil<List<String>>().setData(StrToListUtils.getListByStr(questionnaireList.get(0).getValue()));
-    // }
 
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     @ApiOperation(value = "保存单个问卷")

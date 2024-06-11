@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @RestController
 @RequestMapping("/stu")

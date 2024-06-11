@@ -37,7 +37,18 @@ export default {
         // title: {
         //   text: 'Customized Radar Chart'
         // },
-        legend: {},
+        legend: {
+          // 调整图例项的大小
+          itemHeight: 30,
+          itemWidth: 30, // 调整图例的位置，这里假设是将其上移，具体数值可能需要根据实际情况调整
+          top: '5%', // 或者使用像素值，例如 '100px'
+          left: 'center', // 保持图例水平居中，可以根据需要调整
+          // orient: 'vertical', // 设置为垂直布局，以便在右侧排列
+          // 确保字体大小与其它配置保持一致
+          textStyle: {
+            fontSize: 28
+          }
+        },
         radar: [
           {
             indicator: [
@@ -49,12 +60,18 @@ export default {
               { text: '思想政治', max: 10 }
             ],
             center: ['45%', '50%'],
-            radius: 160,
+            radius: 200,
             axisName: {
               color: '#fff',
               backgroundColor: '#666',
               borderRadius: 3,
-              padding: [3, 5]
+              padding: [3, 5],
+              fontSize: 28
+            },
+            splitLine: {
+              lineStyle: {
+                width: 2 // 可选：增加分割线宽度，使雷达图更清晰
+              }
             }
           }
         ],
@@ -76,7 +93,8 @@ export default {
                   show: true,
                   formatter: function (params) {
                     return params.value;
-                  }
+                  },
+                  fontSize: 28 // 增加数据标签的字体大小
                 }
               },
               {
@@ -93,6 +111,10 @@ export default {
                       offset: 1
                     }
                   ])
+                },
+                label: { // 为第二个系列也添加或调整字体大小
+                  show: true,
+                  fontSize: 28
                 }
               }
             ]
@@ -104,17 +126,36 @@ export default {
 
       const barChart = echarts.init(this.$refs.barChart);
       barChart.setOption({
+        grid: {
+          left: '1%', // 调整左侧间距
+          right: '1%', // 调整右侧间距
+          bottom: '5%', // 调整底部间距，给X轴留出更多空间
+          containLabel: true // 确保标签不被裁剪
+        },
         xAxis: {
           type: 'category',
-          data: ['数学', '语言文学', '专业基础', '专业选修', '工程实践', '思想政治']
+          data: ['数学', '语言文学', '专业基础', '专业选修', '工程实践', '思想政治'],
+          axisLabel: {
+            fontSize: 21, // 设置X轴标签字体大小，与雷达图中的字体大小匹配
+            interval: 0 // 确保显示所有标签，根据实际情况决定是否启用
+          }
         },
         yAxis: {
-          type: 'value'
+          type: 'value',
+          axisLabel: {
+            fontSize: 23 // 设置Y轴标签字体大小，与雷达图中的字体大小匹配
+          }
         },
         series: [
           {
             data: resData,
-            type: 'bar'
+            type: 'bar',
+            barWidth: '50%', // 调整柱状图的宽度，可根据需要调整
+            label: {
+              show: true,
+              position: 'top', // 标签位置设为柱子上方
+              fontSize: 23 // 设置柱状图标签字体大小，与雷达图中的字体大小匹配
+            }
           }
         ]
       });
@@ -134,7 +175,8 @@ export default {
 
 .radar-chart {
   width: 50vw; /* 雷达图宽度设置为视口宽度的一半 */
-  height: 500px; /* 雷达图高度 */
+  height: 700px; /* 雷达图高度 */
+
   /* 可以添加其他样式，如边框等 */
 }
 </style>

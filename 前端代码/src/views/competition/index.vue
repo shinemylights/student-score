@@ -54,7 +54,7 @@
         </Row>
         <Row v-show="openTip"> </Row>
         <Row>
-            <Table :loading="loading" :height="tableHeight" border stripe size="small" :columns="columns" :data="data" ref="table" sortable="custom" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassNmae"></Table>
+            <Table :loading="loading" :height="tableHeight" border stripe size="small" :columns="columns" :data="data" ref="table" sortable="custom" @on-sort-change="changeSort" @on-selection-change="changeSelect" @on-row-click="rowClick" :row-class-name="rowClassNmae" ></Table>
         </Row>
         <Row type="flex" justify="end" class="page">
             <Page :current="searchForm.pageNumber" :total="total" :page-size="searchForm.pageSize" @on-change="changePage" @on-page-size-change="changePageSize" :page-size-opts="[15,20,50]" size="small" show-total show-elevator show-sizer></Page>
@@ -119,7 +119,7 @@ export default {
                 },
                 {
                     title: "序号",
-                    width: 85,
+                    width: 60,
                     align: "center",
                     fixed: "left",
                     sortType: true,
@@ -135,7 +135,7 @@ export default {
                 {
                     title: "竞赛级别",
                     key: "level",
-                    minWidth: 120,
+                    minWidth: 60,
                     tooltip: true,
                     sortable: false,
                 },
@@ -149,7 +149,7 @@ export default {
                 {
                     title: "所获奖项",
                     key: "title",
-                    minWidth: 120,
+                    minWidth: 70,
                     tooltip: true,
                     sortable: false,
                 },
@@ -167,21 +167,21 @@ export default {
                     key: "date",
                     sortable: true,
                     sortType: "desc",
-                    minWidth: 100,
+                    minWidth: 120,
                     align: "center",
                     tooltip: true,
                 },
                 {
                     title: "类别",
                     key: "category",
-                    minWidth: 180,
+                    minWidth: 120,
                     align: "center",
                     tooltip: true,
                 },
                 {
                     title: "审核状态",
                     key: "approvalStatus",
-                    minWidth: 100,
+                    minWidth: 70,
                     align: "center",
                     tooltip: true,
                 },
@@ -396,6 +396,21 @@ export default {
 </script>
 
 <style lang="css">
+/* 增加组件内字体大小 */
+.search,
+.search * {
+  font-size: 18px; /* 或者你需要的大小 */
+}
+
+/* 更细粒度控制，比如只调整Input组件的字体 */
+.search .el-input__inner {
+  font-size: 21px;
+}
+
+/* 调整Button字体 */
+.search .el-button {
+  font-size: 18px;
+}
 .search {
     .operation {
         margin-bottom: 2vh;

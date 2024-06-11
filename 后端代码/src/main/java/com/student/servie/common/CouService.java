@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 李123
+ * @author 廖123
  * 课程的公共业务类
  */
 @Service

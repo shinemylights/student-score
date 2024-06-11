@@ -12,12 +12,10 @@ import com.student.common.WordCloudVO;
 import com.student.dao.domain.Course;
 import com.student.dao.domain.Score;
 import com.student.dao.entity.Contest;
+import com.student.dao.entity.Practice;
 import com.student.dao.entity.Tag;
 import com.student.dao.service.*;
-import com.student.servie.ContestService;
-import com.student.servie.CourseService;
-import com.student.servie.StudentService;
-import com.student.servie.TagService;
+import com.student.servie.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,11 +28,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
 
-import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -47,6 +42,12 @@ public class PortraitController {
 
     @Autowired
     private TagService tagService;
+
+    @Autowired
+    private PracticeService practiceService;
+
+    @Autowired
+    private SkillService skillService;
 
     @Resource
     private MyCourseService myCourseService;
@@ -66,11 +67,11 @@ public class PortraitController {
 
     @GetMapping("/kmeans")
     public Result calculateFeatureAbilities(int id) {
-
+        Random random = new Random();
+        int randomNumber = random.nextInt(190) + 1; // 下界为1，上界为190
+        id = randomNumber;
         String line = null;
         try {
-            // 假设您的Python脚本位于"F:/PycharmProjects/your_script.py"
-            // 并且您要传入的课程ID是"123"
             String pythonScriptPath = "E:\\pythonprojects\\demo1\\StudentScore2.py";
 
             // 构建命令和参数
@@ -140,6 +141,8 @@ public class PortraitController {
                 }
 
             }
+
+
             resultList.add(wordCloudVO);
         };
 

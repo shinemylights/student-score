@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * @author 李123
+ * @author 廖123
  * 返回给前端element ui适配联级选择框的数据结构
  */
 @Data

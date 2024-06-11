@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @Service
 public class ShiroRealm extends AuthorizingRealm {

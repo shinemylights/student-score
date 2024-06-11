@@ -21,7 +21,7 @@ import java.util.Map;
 
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @Configuration
 public class ShiroConfig {

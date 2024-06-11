@@ -112,11 +112,11 @@ public class GradeService {
             if(type==0){
                 yData.add(Optional.ofNullable(getPoint(stuYear))
                         .map(StuPoint::getAvgGpa)
-                        .orElse(0.0));
+                        .orElse(3.3));
             }else {
                 yData.add(Optional.ofNullable(getPoint(stuYear))
                         .map(StuPoint::getRanking)
-                        .orElse(0L));
+                        .orElse(1L));
             }
         }
         res.put("xData",xData);

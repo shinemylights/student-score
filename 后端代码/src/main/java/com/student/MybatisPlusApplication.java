@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @SpringBootApplication
 public class MybatisPlusApplication {

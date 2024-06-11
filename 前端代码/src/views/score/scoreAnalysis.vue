@@ -42,7 +42,7 @@
               <el-table-column
                 prop="stuYear"
                 label="学年"
-                width="180">
+                width="250">
               </el-table-column>
               <el-table-column
                 prop="avgGpa"
@@ -236,13 +236,22 @@ export default {
       const  resData=await this.initLineChartPoint(0)
       myChart.setOption({
         title: {
-          text: '绩点'
+          text: '绩点',
+          textStyle: {
+            fontSize: 23 // 调整标题文字大小
+          }
         },
         legend: {
-          data: ['绩点']
+          data: ['绩点'],
+          textStyle: {
+            fontSize: 20 // 调整图例文字大小
+          }
         },
         tooltip: {
-          trigger: 'axis'
+          trigger: 'axis',
+          textStyle: {
+            fontSize: 18 // 调整提示框文字大小
+          }
         },
         toolbox: {
           feature: {
@@ -252,17 +261,32 @@ export default {
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: resData.xData
+          data: resData.xData,
+          axisLabel: {
+            fontSize: 18 // 调整x轴标签文字大小
+          }
         },
         yAxis: {
-          type: 'value'
+          type: 'value',
+          axisLabel: {
+            fontSize: 18 // 调整y轴标签文字大小
+          }
         },
         series: [
           {
             name: '绩点',
             type: 'line',
             stack: 'Total',
-            data: resData.yData
+            data: resData.yData,
+            label: {
+              normal: {
+                show: true,
+                position: 'top',
+                textStyle: {
+                  fontSize: 18 // 调整系列标签文字大小
+                }
+              }
+            }
           },
         ]
       })
@@ -273,13 +297,22 @@ export default {
       const  resData=await this.initLineChartPoint(1)
       myChart.setOption({
         title: {
-          text: '绩点排名'
+          text: '绩点排名',
+          textStyle: {
+            fontSize: 23 // 调整标题文字大小
+          }
         },
         tooltip: {
-          trigger: 'axis'
+          trigger: 'axis',
+          textStyle: {
+            fontSize: 18 // 调整提示框文字大小
+          }
         },
         legend: {
-          data: ['绩点排名']
+          data: ['绩点排名'],
+          textStyle: {
+            fontSize: 20 // 调整图例文字大小
+          }
         },
         grid: {
           left: '3%',
@@ -294,22 +327,37 @@ export default {
         },
         xAxis: {
           axisLine: {
-            onZero:false
+            onZero: false
           },
           type: 'category',
           boundaryGap: false,
-          data: resData.xData
+          data: resData.xData,
+          axisLabel: {
+            fontSize: 18 // 调整x轴标签文字大小
+          }
         },
         yAxis: {
           type: 'value',
-          inverse:true
+          inverse: true,
+          axisLabel: {
+            fontSize: 18 // 调整y轴标签文字大小
+          }
         },
         series: [
           {
             name: '绩点排名',
             type: 'line',
             stack: 'Total',
-            data: resData.yData
+            data: resData.yData,
+            label: {
+              normal: {
+                show: true,
+                position: 'top',
+                textStyle: {
+                  fontSize: 18 // 调整系列标签文字大小
+                }
+              }
+            }
           },
         ]
       })
@@ -320,7 +368,10 @@ export default {
       const  resData=await this.getGradeInterval()
       myChart.setOption({
           title: {
-            text: '在校成绩区间图'
+            text: '在校成绩区间图',
+            textStyle: {
+              fontSize: 23 // 调整标题文字大小
+            }
           },
           tooltip: {
             trigger: 'item'
@@ -328,7 +379,10 @@ export default {
           legend: {
             orient: 'vertical',
             left: "left",
-            top:20
+            top: 25,
+            textStyle: {
+              fontSize: 20 // 调整图例文字大小
+            }
           },
           toolbox: {
             show: true,
@@ -337,6 +391,9 @@ export default {
               dataView: { show: true, readOnly: false },
               restore: { show: true },
               saveAsImage: { show: true }
+            },
+            iconStyle: {
+              fontSize: 20 // 调整工具箱图标旁边文字的大小
             }
           },
           series: [
@@ -348,6 +405,13 @@ export default {
               roseType: 'area',
               itemStyle: {
                 borderRadius: 8
+              },
+              label: {
+                normal: {
+                  textStyle: {
+                    fontSize: 20 // 调整饼图扇区中的文字大小
+                  }
+                }
               },
               data: [
                 { value: resData[0], name: '不及格(重修后任不及格)' },
@@ -377,6 +441,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+html {
+  font-size: 16px !important; /* 这将设置基础字体大小为16px */
+}
 .gpaCard {
   display: inline-block;
   padding: 10px;
@@ -391,6 +458,18 @@ export default {
     span{
       margin-bottom: 10px;
     }
+}
+
+.el-card {
+  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.el-table {
+  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.custom-table .el-table__body {
+  font-size: 20px !important; /* 调整为你希望的字体大小 */
 }
 
 </style>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author 李123
+ * @author 廖123
  * 课程的公共控制层
  */
 @RestController

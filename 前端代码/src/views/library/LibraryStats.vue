@@ -2,13 +2,15 @@
   <div class="library-stats">
     <el-row :gutter="20">
       <el-col :span="12">
-        <h2>图书馆访问次数排名</h2>
+        <h1>图书馆访问次数排名</h1>
+        <div style="height: 300px; overflow-y: auto;">
         <el-table
           :data="studentsData.slice(0, 10)"
           style="width: 100%"
           stripe
           border
           :row-class-name="highlightCurrentStudent"
+          class="custom-table"
         >
           <el-table-column
             prop="rank"
@@ -24,29 +26,24 @@
             label="访问次数"
           />
         </el-table>
-        <p v-if="currentStudent">
+          </div>
+        <p v-if="currentStudent" style="font-size: 21px;">
           当前学生（{{ currentStudent.name }}）排名：{{ currentStudent.rank }}
         </p>
       </el-col>
       <el-col :span="12">
-        <h2>每月去图书馆的频次</h2>
-        <el-card shadow="always">
-          <div ref="chartMonthlyVisits" style="width: 100%; height: 400px;"></div>
-        </el-card>
+        <h1>每月去图书馆的频次</h1>
+          <div ref="chartMonthlyVisits" style="width: 100%; height: 400px; padding: 0px;"></div>
       </el-col>
     </el-row>
     <el-row :gutter="20">
       <el-col :span="12">
-        <h2>每月在图书馆的平均时间</h2>
-        <el-card shadow="always">
+        <h1>每月在图书馆的平均时间</h1>
           <div ref="chartAvgTimePerMonth" style="width: 100%; height: 400px;"></div>
-        </el-card>
       </el-col>
       <el-col :span="12">
-        <h2>各类书籍借阅统计</h2>
-        <el-card shadow="always">
+        <h1>各类书籍借阅统计</h1>
           <div ref="chartBookCategories" style="width: 100%; height: 400px;"></div>
-        </el-card>
       </el-col>
     </el-row>
   </div>
@@ -92,7 +89,7 @@ const avgTimePerMonth = [
 // 提取'avgTime'字段
 const avgTimePerMonthData = avgTimePerMonth.map(item => item.avgTime);
 
-const categories = ['科幻', '现实', '科学', '历史', '童话', '神秘', '奇幻'];
+const categories = ['计算机', '数学', '经济学', '历史', '小说', '传记', '科幻'];
 const bookCategories = categories.map((category, index) => ({
   category,
   count: Math.floor(Math.random() * 100) + 10, // 假设每种类别至少有10本被借阅
@@ -156,10 +153,16 @@ export default {
       const option = {
         xAxis: {
           type: 'category',
-          data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+          data: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+          axisLabel: {
+            fontSize: 25
+          }
         },
         yAxis: {
           type: 'value',
+          axisLabel: {
+            fontSize: 20
+          }
         },
         series: [{
           data: monthlyVisits,
@@ -176,11 +179,17 @@ export default {
       const option = {
         xAxis: {
           type: 'category',
-          data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+          data: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+          axisLabel: {
+            fontSize: 25
+          }
         },
         yAxis: {
           type: 'value',
           name: 'Average Time (hours)',
+          axisLabel: {
+            fontSize: 20
+          }
         },
         series: [{
           data: avgTimePerMonth,
@@ -198,8 +207,13 @@ export default {
           trigger: 'item',
         },
         legend: {
+          itemHeight: 22,
+          itemWidth: 22,
           orient: 'vertical',
           left: 'left',
+          textStyle: {
+            fontSize: 25
+          }
         },
         series: [
           {
@@ -212,10 +226,14 @@ export default {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
                 shadowColor: 'rgba(0, 0, 0, 0.5)',
-              },
+              }
             },
-          },
-        ],
+            // 放大数据标签字体
+            label: {
+              fontSize: 25
+            }
+          }
+        ]
       };
       chart.setOption(option);
     },
@@ -233,5 +251,16 @@ export default {
 
 .current-student-row {
   background-color: #f30a3c;
+}
+.custom-table { /* 应用于整个表格的样式 */
+  font-size: 23px; /* 基础字体大小 */
+}
+
+.custom-table .el-table__header tr th { /* 表头行样式 */
+  font-size: 23px; /* 增加表头字体大小 */
+}
+
+.custom-table .el-table__body tr td { /* 内容单元格样式 */
+  font-size: 23px; /* 内容字体大小 */
 }
 </style>

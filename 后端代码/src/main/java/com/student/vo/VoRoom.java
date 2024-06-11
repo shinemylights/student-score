@@ -3,7 +3,7 @@ package com.student.vo;
 import lombok.Data;
 
 /**
- * @author 李123
+ * @author 廖123
  * 前端课堂的映射类
  */
 @Data

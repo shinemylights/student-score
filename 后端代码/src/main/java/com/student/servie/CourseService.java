@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @author 李123
+ * @author 廖123
  * 处理课程选修等相关信息
  */
 @Service

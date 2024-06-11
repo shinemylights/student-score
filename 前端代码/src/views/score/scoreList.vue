@@ -2,11 +2,11 @@
   <div>
     <el-card style="margin-bottom: 20px">
       <el-row :gutter="20">
-        <el-col :span="12"><p>学号：<el-tag type="info">{{username}}</el-tag></p></el-col>
+        <el-col :span="12"><p>学号：<el-tag type="info" style="font-size: large">{{username}}</el-tag></p></el-col>
         <el-col :span="12">
           <p>总平均绩点：
             <el-tooltip class="item" effect="dark" content="平均学分绩点（GPA）=（每门课程的学分数*对应课程的绩点）的总和/学分的总和" placement="top">
-              <el-tag>{{avgPoint.avgGpa}}</el-tag>
+              <el-tag style="font-size: large">{{avgPoint.avgGpa}}</el-tag>
             </el-tooltip>
           </p>
         </el-col>
@@ -23,14 +23,14 @@
           </el-select>
           <el-button type="primary" style="margin-left: 30px" @click="getGrade">查询</el-button>
         </el-col>
-        <el-col :span="12"><p>总学分：<el-tag>{{sumAllGrade}}</el-tag></p></el-col>
+        <el-col :span="12"><p>总学分：<el-tag style="font-size: large">{{sumAllGrade}}</el-tag></p></el-col>
       </el-row>
     </el-card>
     <el-card>
       <el-row :gutter="20" v-show="gradeList.length>0">
-        <el-col :span="8"><p>学年总学分：<el-tag type="success">{{sumGrade}}</el-tag></p></el-col>
-        <el-col :span="8"><p>学年平均绩点：<el-tag type="success">{{avgYearPoint.avgGpa}}</el-tag></p></el-col>
-        <el-col :span="8"><p>学年平均绩点排名：<el-tag type="success">{{avgYearPoint.ranking}}</el-tag></p></el-col>
+        <el-col :span="8"><p>学年总学分：<el-tag type="success" style="font-size: large">{{sumGrade}}</el-tag></p></el-col>
+        <el-col :span="8"><p>学年平均绩点：<el-tag type="success" style="font-size: large">{{avgYearPoint.avgGpa}}</el-tag></p></el-col>
+        <el-col :span="8"><p>学年平均绩点排名：<el-tag type="success" style="font-size: large">{{avgYearPoint.ranking}}</el-tag></p></el-col>
       </el-row>
       <el-table
         :data="gradeList"
@@ -53,6 +53,7 @@
             <el-button
               size="mini"
               type="primary"
+              style="font-size: large"
               @click="toRankList(scope.row.couId,scope.row.couName)">大神排名</el-button>
           </template>
         </el-table-column>
@@ -148,5 +149,19 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+html {
+  font-size: 16px !important; /* 这将设置基础字体大小为16px */
+}
+.el-card {
+  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.el-table {
+  font-size: 22px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.custom-table .el-table__body {
+  font-size: 20px !important; /* 调整为你希望的字体大小 */
+}
 
 </style>

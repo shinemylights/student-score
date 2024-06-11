@@ -20,7 +20,7 @@ import java.util.*;
 
 /**
  * 学生-课堂业务实现类
- * @author 李123
+ * @author 廖123
  */
 @Service
 public class CouStuServiceImpl implements CouStuService {

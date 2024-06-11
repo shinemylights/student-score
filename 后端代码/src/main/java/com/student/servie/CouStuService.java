@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 /**
  * 学生-课堂
- * @author 李123
+ * @author 廖123
  */
 public interface CouStuService{
 

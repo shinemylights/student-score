@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 
 /**
- * @author 李123
+ * @author 廖123
  */
 @Component
 public class RedisConfig {

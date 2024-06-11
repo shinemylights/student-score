@@ -7,7 +7,7 @@ import org.apache.shiro.SecurityUtils;
 import java.util.*;
 
 /**
- * @author 李123
+ * @author 廖123
  * 工具类
  */
 public class MainUtils {

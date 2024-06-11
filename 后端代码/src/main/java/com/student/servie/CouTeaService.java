@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- * @author 李123
+ * @author 廖123
  * 学生课堂的接口类
  */
 public interface CouTeaService {

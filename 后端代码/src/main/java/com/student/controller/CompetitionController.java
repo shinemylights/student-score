@@ -33,7 +33,7 @@ import java.util.List;
 @RequestMapping("/competition")
 public class CompetitionController {
 
-    //头像图片上传地址
+    //图片上传地址
     @Value("E:/")
     private String imgFile;
 
