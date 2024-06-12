@@ -14,7 +14,7 @@
       </el-table-column>
       <el-table-column
         label="学号"
-        width="120">
+        width="140">
         <template slot-scope="scope">
           <span>{{ scope.row.username }}</span>
         </template>
@@ -28,21 +28,21 @@
       </el-table-column>
       <el-table-column
         label="邮箱"
-        width="180">
+        width="200">
         <template slot-scope="scope">
           <span>{{ scope.row.email }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="专业班级"
-        width="90">
+        width="110">
         <template slot-scope="scope">
           <span>{{ scope.row.majorClass[0] }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="入学日期"
-        width="100">
+        width="130">
         <template slot-scope="scope">
           <span>{{ scope.row.stuDay }}</span>
         </template>
@@ -79,10 +79,12 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
+            style="font-size: medium"
             @click="editStu(scope.row)">编辑</el-button>
           <el-button
             size="mini"
             type="danger"
+            style="font-size: medium"
             @click="delTea(scope.row.id)">删除</el-button>
         </template>
       </el-table-column>
@@ -90,6 +92,7 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
+            style="font-size: medium"
             @click="navigateToStudentProfile">学生画像</el-button>
         </template>
       </el-table-column>
@@ -279,5 +282,16 @@ export default {
 .pagination{
   margin-top: 15px;
   float: right;
+}
+.el-card {
+  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.el-table {
+  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.custom-table .el-table__body {
+  font-size: 19px !important; /* 调整为你希望的字体大小 */
 }
 </style>

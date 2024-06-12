@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button size="small" style="margin-bottom: 15px" type="primary" @click="dormDialog=true;dormTitle='新增标签'">新增</el-button>
+    <el-button size="small" style="margin-bottom: 15px; font-size: medium" type="primary" @click="dormDialog=true;dormTitle='新增标签'">新增</el-button>
     <query-box :show-data="showData" :query-type="queryType" @submitData="submitData"></query-box>
     <el-table
       :data="pageData.records"
@@ -37,10 +37,12 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
+            style="font-size: medium"
             @click="dormDialog=true;dormData=scope.row;dormTitle='编辑标签'">编辑</el-button>
           <el-button
             size="mini"
             type="danger"
+            style="font-size: medium"
             @click="delDorm(scope.row.id)">删除</el-button>
         </template>
       </el-table-column>
@@ -139,5 +141,16 @@ export default {
 .pagination{
   margin-top: 15px;
   float: right;
+}
+.el-card {
+  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.el-table {
+  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+}
+
+.custom-table .el-table__body {
+  font-size: 19px !important; /* 调整为你希望的字体大小 */
 }
 </style>

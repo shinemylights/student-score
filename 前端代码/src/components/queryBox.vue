@@ -3,7 +3,7 @@
     <el-collapse-item name="1">
       <template slot="title">
         <div style="margin-left: 20px">
-          <i class="el-icon-search"></i><span style="margin-left: 10px;color: #33aef0">查询</span>
+          <i class="el-icon-search"></i><span style="margin-left: 10px;color: #33aef0; font-size: medium">查询</span>
         </div>
       </template>
       <div style="margin-left: 20px">

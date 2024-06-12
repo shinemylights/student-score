@@ -1,33 +1,33 @@
 <template>
-<div class="search">
+<div class="search" style="font-size: large">
     <Card>
-        <Divider>学业发展水平 - 自评问卷</Divider>
+        <Divider style="font-size: larger">学业发展水平 - 自评问卷</Divider>
         <Form label-position="top">
-            <Row :gitter="16">
-                <Col span="24">
+            <Row :gitter="20">
+                <Col span="24" class="a">
                 <FormItem label="1. 学习用品准备齐全,满分10，自行填写">
-                    <InputNumber :max="10" :min="0" v-model="select1" style="width:570px"></InputNumber>
+                    <InputNumber :max="10" :min="0" v-model="select1" style="width:570px; font-size: large"></InputNumber>
+                </FormItem>
+                </Col>
+            </Row>
+            <Row :gitter="20">
+                <Col span="24" class="a">
+                <FormItem label="2. 学习状态佳（入座即学）,满分10，自行填写" style="font-size: large">
+                    <InputNumber :max="10" :min="0" v-model="select2" style="width:570px; font-size: large"></InputNumber>
                 </FormItem>
                 </Col>
             </Row>
             <Row :gitter="16">
-                <Col span="24">
-                <FormItem label="2. 学习状态佳（入座即学）,满分10，自行填写">
-                    <InputNumber :max="10" :min="0" v-model="select2" style="width:570px"></InputNumber>
-                </FormItem>
-                </Col>
-            </Row>
-            <Row :gitter="16">
-                <Col span="24">
+                <Col span="24" class="a">
                 <FormItem label="3. 遵守课堂纪律,满分10，自行填写">
-                    <InputNumber :max="10" :min="0" v-model="select3" style="width:570px"></InputNumber>
+                    <InputNumber :max="10" :min="0" v-model="select3" style="width:570px; font-size: large"></InputNumber>
                 </FormItem>
                 </Col>
             </Row>
             <Row :gitter="16">
-                <Col span="24">
+                <Col span="24" class="a">
                 <FormItem label="4. 专注听讲">
-                    <Select v-model="select4" style="width:570px">
+                    <Select v-model="select4" style="width:570px; font-size: large">
                         <Option value="20">A:优秀</Option>
                         <Option value="15">B:良好</Option>
                         <Option value="10">C:一般</Option>
@@ -38,11 +38,11 @@
                 </Col>
             </Row>
             <Row :gitter="16">
-                <Col span="24">
+                <Col span="24" class="a">
                 <FormItem label="5. 每周课堂回答教师提问的次数是">
                     <Select v-model="select5" style="width:570px">
-                        <Option value="20">A:5次以上</Option>
-                        <Option value="18">B:3-4次</Option>
+                        <Option value="20" STYLE="font-size: large">A:5次以上</Option>
+                        <Option value="18" STYLE="font-size: large">B:3-4次</Option>
                         <Option value="15">C:1-2次</Option>
                         <Option value="10">D:从不</Option>
                     </Select>
@@ -50,11 +50,11 @@
                 </Col>
             </Row>
             <Row :gitter="16">
-                <Col span="24">
+                <Col span="24" class="a">
                 <FormItem label="6. 你在抽象概括能力、空间想象能力、推理论证能力、运算求解能力数学基本能力中，有几项是比较强的？">
                     <Select v-model="select6" style="width:570px">
                         <Option value="20">A: 4项</Option>
-                        <Option value="15">B: 3项</Option>
+                        <Option value="15" STYLE="font-size: large">B: 3项</Option>
                         <Option value="10">C: 2项</Option>
                         <Option value="5">D: 1项</Option>
                         <Option value="0">E: 0项</Option>
@@ -63,15 +63,15 @@
                 </Col>
             </Row>
             <Row :gitter="16">
-                <Col span="24">
+                <Col span="24" class="a">
                 <FormItem label="7. 你认为你的语言表达能力可以得多少分,满分10，自行填写">
-                    <InputNumber :max="10" :min="0" v-model="select7" style="width:570px"></InputNumber>
+                    <InputNumber :max="10" :min="0" v-model="select7" style="width:570px; font-size: large"></InputNumber>
                 </FormItem>
                 </Col>
             </Row>
             <Row :gitter="16">
                 <Button type="success" @click="saveWenJuanFx">提交问卷</Button>
-                <Button type="warning" @click="resetForm" style="marginLeft:30px">重置问卷</Button>
+                <Button type="warning" @click="resetForm" style="marginLeft:30px; font-size: large">重置问卷</Button>
             </Row>
         </Form>
     </Card>
@@ -163,28 +163,13 @@ export default {
 };
 </script>
 
-<style lang="css">
-.search {
-    .operation {
-        margin-bottom: 2vh;
-    }
+<style scoped lang="css">
+.a ::v-deep .ivu-form-item .ivu-form-item-label {
+  font-size: large;
+}
 
-    .select-count {
-        font-weight: 600;
-        color: #40a9ff;
-    }
-
-    .select-clear {
-        margin-left: 10px;
-    }
-
-    .page {
-        margin-top: 2vh;
-    }
-
-    .drop-down {
-        margin-left: 5px;
-    }
+.a ::v-deep .ivu-form-item .ivu-form-item-content {
+  font-size: large;
 }
 
 .filter-panel {
@@ -219,6 +204,7 @@ export default {
 
 .ivu-table td {
     height: 38px !important;
+  font-size: large !important;
 }
 
 .ivu-table-cell-with-expand {
@@ -229,6 +215,6 @@ export default {
 .ivu-table .rowClassNmaeColor td {
     background-color: #b0b3b6 !important;
     color: #ffffff !important;
-    font-size: 12px;
+    font-size: 20px;
 }
 </style>
