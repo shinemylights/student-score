@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button size="small" style="margin-bottom: 15px" type="primary" @click="addStu">新增</el-button>
+    <el-button size="medium" style="margin-bottom: 15px; font-size: 20px" type="primary" @click="addStu">新增</el-button>
     <query-box :show-data="showData" :query-type="queryType" @submitData="submitData"></query-box>
     <el-table
       :data="pageData.records"
@@ -14,42 +14,42 @@
       </el-table-column>
       <el-table-column
         label="学号"
-        width="140">
+        width="170">
         <template slot-scope="scope">
           <span>{{ scope.row.username }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="真实姓名"
-        width="90">
+        width="110">
         <template slot-scope="scope">
           <span>{{ scope.row.realName }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="邮箱"
-        width="200">
+        width="240">
         <template slot-scope="scope">
           <span>{{ scope.row.email }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="专业班级"
-        width="110">
+        width="120">
         <template slot-scope="scope">
           <span>{{ scope.row.majorClass[0] }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="入学日期"
-        width="130">
+        width="140">
         <template slot-scope="scope">
           <span>{{ scope.row.stuDay }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="宿舍地址"
-        width="90">
+        width="110">
         <template slot-scope="scope">
           <span>{{  scope.row.dorm.length===1?'待完善': scope.row.dorm[1]+ scope.row.dorm[2] }}</span>
         </template>
@@ -70,29 +70,29 @@
 <!--      </el-table-column>-->
       <el-table-column
         label="性别"
-        width="90">
+        width="60">
         <template slot-scope="scope">
           <span>{{ scope.row.sex }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="160">
+      <el-table-column label="操作" width="180">
         <template slot-scope="scope">
           <el-button
             size="mini"
-            style="font-size: medium"
+            style="font-size: 21px"
             @click="editStu(scope.row)">编辑</el-button>
           <el-button
             size="mini"
             type="danger"
-            style="font-size: medium"
+            style="font-size: 21px"
             @click="delTea(scope.row.id)">删除</el-button>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="160">
+      <el-table-column label="操作" width="150">
         <template slot-scope="scope">
           <el-button
             size="mini"
-            style="font-size: medium"
+            style="font-size: 21px; background-color: #20a0ff; color: white"
             @click="navigateToStudentProfile">学生画像</el-button>
         </template>
       </el-table-column>
@@ -284,14 +284,14 @@ export default {
   float: right;
 }
 .el-card {
-  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+  font-size: 22px !important; /* 使用 !important 来确保样式被应用 */
 }
 
 .el-table {
-  font-size: 19px !important; /* 使用 !important 来确保样式被应用 */
+  font-size: 22px !important; /* 使用 !important 来确保样式被应用 */
 }
 
 .custom-table .el-table__body {
-  font-size: 19px !important; /* 调整为你希望的字体大小 */
+  font-size: 22px !important; /* 调整为你希望的字体大小 */
 }
 </style>

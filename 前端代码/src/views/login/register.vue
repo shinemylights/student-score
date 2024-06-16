@@ -3,7 +3,7 @@
     <el-form ref="registerForm" :model="registerForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">学生评价系统</h3>
+        <h1 class="title">学生画像系统</h1>
       </div>
 
       <el-form-item prop="username">
@@ -49,22 +49,22 @@
         <el-input type="password" v-model="registerForm.password" autocomplete="off" placeholder="密码"></el-input>
       </el-form-item>
 
-      <el-form-item prop="isTeacher">
-        <span class="svg-container">
-          <svg-icon icon-class="#icon-xuanzehuiyuan" />
-        </span>
-        <el-radio-group v-model="registerForm.isTeacher" style="margin-left: 15px">
-          <el-radio :label="0">注册为学生</el-radio>
-          <el-radio :label="1">注册为教师</el-radio>
-        </el-radio-group>
-      </el-form-item>
+<!--      <el-form-item prop="isTeacher">-->
+<!--        <span class="svg-container">-->
+<!--          <svg-icon icon-class="#icon-xuanzehuiyuan" />-->
+<!--        </span>-->
+<!--        <el-radio-group v-model="registerForm.isTeacher" style="margin-left: 15px">-->
+<!--          <el-radio :label="0">注册为学生</el-radio>-->
+<!--          <el-radio :label="1">注册为教师</el-radio>-->
+<!--        </el-radio-group>-->
+<!--      </el-form-item>-->
 
       <div style="text-align: center">
         <el-button type="primary" @click="submitForm('registerForm')" class="loginBut">注册</el-button>
         <el-button @click="resetForm('registerForm')" class="loginBut">重置</el-button>
       </div>
-      <p style="float: right;font-size: 14px">
-        已有账号？<el-link type="primary" @click="toLogin">去登录</el-link>
+      <p style="float: right;font-size: 16px; font-weight: bold; margin-left: 20px; color: #0e0e0e">
+        已有账号？<el-link type="primary" @click="toLogin" style="font-size: 18px; font-weight: bold; color: green">去登录</el-link>
       </p>
     </el-form>
   </div>
@@ -184,7 +184,7 @@ $cursor: #fff;
     width: 85%;
 
     input {
-      background: transparent;
+      //background: transparent;
       border: 0;
       -webkit-appearance: none;
       border-radius: 0;
@@ -197,12 +197,17 @@ $cursor: #fff;
         box-shadow: 0 0 0 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;
       }
+
+      &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #8d8c8c; /* 你希望的颜色 */
+        font-size: 16px;
+      }
     }
   }
 
   .el-form-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(252, 252, 252);
     border-radius: 5px;
     color: #454545;
   }
@@ -256,7 +261,7 @@ $light_gray: #fcfcfc;
     position: relative;
 
     .title {
-      font-size: 26px;
+      font-size: 35px;
       color: $light_gray;
       margin: 0px auto 40px auto;
       text-align: center;

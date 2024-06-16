@@ -33,7 +33,7 @@ public class MainUtils {
     }
 
     /**
-     * 构造如’2022-2023第一学期‘形式学年数据
+     * 构造如’2024-2023第一学期‘形式学年数据
      */
     public static List<String> initStuYear() {
         StUser user = (StUser) SecurityUtils.getSubject().getPrincipal();
@@ -68,7 +68,7 @@ public class MainUtils {
     }
 
     /**
-     * 构造如’2022,一‘形式学年数据
+     * 构造如’2024,一‘形式学年数据
      */
     public static List<String> initStuYearNum(){
         List<String> list = initStuYear();

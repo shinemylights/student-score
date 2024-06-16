@@ -19,8 +19,8 @@ import java.lang.reflect.InvocationTargetException;
  *  user前端控制器
  * </p>
  *
- * @author liHeWei
- * @since 2022-04-29
+ * @author LiaoXuYang
+ * @since 2024-04-29
  */
 @RestController
 public class StUserController {

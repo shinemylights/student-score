@@ -17,7 +17,7 @@ public class CodeUtils {
         String property = System.getProperty("user.dir");
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/springboot_student?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC", "root", "password")
                 .globalConfig(builder -> {
-                    builder.author("liHeWei") // 设置作者
+                    builder.author("LiaoXuYang") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
                             .outputDir(property+"/src/main/java"); // 指定输出目录
                 })

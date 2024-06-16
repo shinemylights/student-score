@@ -15,8 +15,8 @@ import lombok.Setter;
  *
  * </p>
  *
- * @author liHeWei
- * @since 2022-05-05
+ * @author LiaoXuYang
+ * @since 2024-05-05
  */
 @Data
 @TableName("st_class")

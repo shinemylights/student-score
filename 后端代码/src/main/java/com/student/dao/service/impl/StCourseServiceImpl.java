@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  *  服务实现类
  * </p>
  *
- * @author liHeWei
- * @since 2022-04-29
+ * @author LiaoXuYang
+ * @since 2024-04-29
  */
 @Service
 public class StCourseServiceImpl extends ServiceImpl<StCourseMapper, StCourse> implements IStCourseService {

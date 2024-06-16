@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">学生评价系统</h3>
+        <h1 class="title">学生画像系统</h1>
       </div>
 
       <el-form-item prop="account">
@@ -24,8 +24,8 @@
         <el-button type="primary" @click="submitForm('loginForm')" class="loginBut">登录</el-button>
         <el-button @click="resetForm('loginForm')" class="loginBut">重置</el-button>
       </div>
-      <p style="float: right;font-size: 14px">
-        暂无账号？<el-link type="primary" @click="toRegister">去注册</el-link>
+      <p style="float: right;font-size: 16px; font-weight: bold; margin-left: 20px;">
+             暂无账号？<el-link type="primary" @click="toRegister" style="font-size: 16px; font-weight: bold;">去注册</el-link>
       </p>
     </el-form>
   </div>
@@ -91,7 +91,7 @@ export default {
 
 $bg:#283443;
 $light_gray:#fff;
-$cursor: #fff;
+$cursor: #c91818;
 
 @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
   .login-container .el-input input {
@@ -111,7 +111,7 @@ $cursor: #fff;
     width: 85%;
 
     input {
-      background: transparent;
+      //background: transparent;
       border: 0;
       -webkit-appearance: none;
       border-radius: 0;
@@ -124,14 +124,25 @@ $cursor: #fff;
         box-shadow: 0 0 0 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;
       }
+
+      &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #8d8c8c; /* 你希望的颜色 */
+        font-size: 16px;
+      }
     }
   }
 
   .el-form-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(252, 252, 252);
     border-radius: 5px;
-    color: #454545;
+    color: #252424;
+  }
+
+  .el-button{
+    font-size: large !important;
+    font-family: '宋体', sans-serif !important;
+    font-weight: bold !important;
   }
 }
 </style>
@@ -183,7 +194,7 @@ $light_gray: #fcfafa;
     position: relative;
 
     .title {
-      font-size: 26px;
+      font-size: 35px;
       color: $light_gray;
       margin: 0px auto 40px auto;
       text-align: center;
@@ -201,4 +212,5 @@ $light_gray: #fcfafa;
     user-select: none;
   }
 }
+
 </style>

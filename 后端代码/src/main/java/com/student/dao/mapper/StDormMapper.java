@@ -9,8 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  *  Mapper 接口
  * </p>
  *
- * @author liHeWei
- * @since 2022-04-29
+ * @author LiaoXuYang
+ * @since 2024-04-29
  */
 @Mapper
 public interface StDormMapper extends BaseMapper<StDorm> {

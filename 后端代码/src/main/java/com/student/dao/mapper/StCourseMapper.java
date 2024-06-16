@@ -11,8 +11,8 @@ import java.util.List;
  *  Mapper 接口
  * </p>
  *
- * @author liHeWei
- * @since 2022-04-29
+ * @author LiaoXuYang
+ * @since 2024-04-29
  */
 @Mapper
 public interface StCourseMapper extends BaseMapper<StCourse> {

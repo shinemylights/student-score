@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  *  服务类
  * </p>
  *
- * @author liHeWei
+ * @author LiaoXuYang
  * @since 2023-02-22
  */
 public interface IStReviewGradeService extends IService<StReviewGrade> {

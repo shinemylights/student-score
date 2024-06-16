@@ -238,19 +238,19 @@ export default {
         title: {
           text: '绩点',
           textStyle: {
-            fontSize: 23 // 调整标题文字大小
+            fontSize: 27 // 调整标题文字大小
           }
         },
         legend: {
           data: ['绩点'],
           textStyle: {
-            fontSize: 20 // 调整图例文字大小
+            fontSize: 24 // 调整图例文字大小
           }
         },
         tooltip: {
           trigger: 'axis',
           textStyle: {
-            fontSize: 18 // 调整提示框文字大小
+            fontSize: 22 // 调整提示框文字大小
           }
         },
         toolbox: {
@@ -263,13 +263,13 @@ export default {
           boundaryGap: false,
           data: resData.xData,
           axisLabel: {
-            fontSize: 18 // 调整x轴标签文字大小
+            fontSize: 22 // 调整x轴标签文字大小
           }
         },
         yAxis: {
           type: 'value',
           axisLabel: {
-            fontSize: 18 // 调整y轴标签文字大小
+            fontSize: 22 // 调整y轴标签文字大小
           }
         },
         series: [
@@ -283,7 +283,7 @@ export default {
                 show: true,
                 position: 'top',
                 textStyle: {
-                  fontSize: 18 // 调整系列标签文字大小
+                  fontSize: 22 // 调整系列标签文字大小
                 }
               }
             }
@@ -299,19 +299,19 @@ export default {
         title: {
           text: '绩点排名',
           textStyle: {
-            fontSize: 23 // 调整标题文字大小
+            fontSize: 27 // 调整标题文字大小
           }
         },
         tooltip: {
           trigger: 'axis',
           textStyle: {
-            fontSize: 18 // 调整提示框文字大小
+            fontSize: 22 // 调整提示框文字大小
           }
         },
         legend: {
           data: ['绩点排名'],
           textStyle: {
-            fontSize: 20 // 调整图例文字大小
+            fontSize: 24 // 调整图例文字大小
           }
         },
         grid: {
@@ -333,14 +333,14 @@ export default {
           boundaryGap: false,
           data: resData.xData,
           axisLabel: {
-            fontSize: 18 // 调整x轴标签文字大小
+            fontSize: 22 // 调整x轴标签文字大小
           }
         },
         yAxis: {
           type: 'value',
           inverse: true,
           axisLabel: {
-            fontSize: 18 // 调整y轴标签文字大小
+            fontSize: 22 // 调整y轴标签文字大小
           }
         },
         series: [
@@ -354,7 +354,7 @@ export default {
                 show: true,
                 position: 'top',
                 textStyle: {
-                  fontSize: 18 // 调整系列标签文字大小
+                  fontSize: 22 // 调整系列标签文字大小
                 }
               }
             }
@@ -370,7 +370,7 @@ export default {
           title: {
             text: '在校成绩区间图',
             textStyle: {
-              fontSize: 23 // 调整标题文字大小
+              fontSize: 28 // 调整标题文字大小
             }
           },
           tooltip: {
@@ -381,7 +381,7 @@ export default {
             left: "left",
             top: 25,
             textStyle: {
-              fontSize: 20 // 调整图例文字大小
+              fontSize: 23 // 调整图例文字大小
             }
           },
           toolbox: {
@@ -393,7 +393,7 @@ export default {
               saveAsImage: { show: true }
             },
             iconStyle: {
-              fontSize: 20 // 调整工具箱图标旁边文字的大小
+              fontSize: 24 // 调整工具箱图标旁边文字的大小
             }
           },
           series: [
@@ -409,12 +409,12 @@ export default {
               label: {
                 normal: {
                   textStyle: {
-                    fontSize: 20 // 调整饼图扇区中的文字大小
+                    fontSize: 24 // 调整饼图扇区中的文字大小
                   }
                 }
               },
               data: [
-                { value: resData[0], name: '不及格(重修后任不及格)' },
+                { value: resData[0], name: '不及格(重修后仍不及格)' },
                 { value: resData[1], name: '60-70' },
                 { value: resData[2], name: '70-80' },
                 { value: resData[3], name: '80-90' },
@@ -461,15 +461,15 @@ html {
 }
 
 .el-card {
-  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+  font-size: 24px !important; /* 使用 !important 来确保样式被应用 */
 }
 
 .el-table {
-  font-size: 20px !important; /* 使用 !important 来确保样式被应用 */
+  font-size: 24px !important; /* 使用 !important 来确保样式被应用 */
 }
 
 .custom-table .el-table__body {
-  font-size: 20px !important; /* 调整为你希望的字体大小 */
+  font-size: 24px !important; /* 调整为你希望的字体大小 */
 }
 
 </style>

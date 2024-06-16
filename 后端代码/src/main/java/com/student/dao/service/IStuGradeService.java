@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * VIEW 服务类
  * </p>
  *
- * @author liHeWei
+ * @author LiaoXuYang
  * @since 2023-03-08
  */
 public interface IStuGradeService extends IService<StuGrade> {

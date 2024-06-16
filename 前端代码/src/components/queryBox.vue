@@ -8,10 +8,10 @@
       </template>
       <div style="margin-left: 20px">
         <el-form :inline="true" :model="formData">
-          <el-form-item size="medium" label="用户名" v-if="showData.username">
+          <el-form-item size="large" label="用户名" v-if="showData.username">
             <el-input v-model="formData.username" placeholder="用户名"></el-input>
           </el-form-item>
-          <el-form-item size="medium" label="真实姓名" v-if="showData.realName">
+          <el-form-item size="large" label="真实姓名" v-if="showData.realName">
             <el-input v-model="formData.realName" placeholder="真实姓名"></el-input>
           </el-form-item>
           <el-form-item size="medium" label="标签名" v-if="showData.dormAddress">
@@ -27,7 +27,7 @@
             <el-input v-model="formData.teaId" placeholder="教师编号"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button size="small" type="primary" @click="submitForm">查询</el-button>
+            <el-button size="medium" type="primary" @click="submitForm">查询</el-button>
           </el-form-item>
         </el-form>
       </div>

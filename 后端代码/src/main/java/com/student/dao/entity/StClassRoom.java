@@ -14,8 +14,8 @@ import lombok.Data;
  *
  * </p>
  *
- * @author liHeWei
- * @since 2022-05-12
+ * @author LiaoXuYang
+ * @since 2024-05-12
  */
 @Data
 @TableName("st_class_room")

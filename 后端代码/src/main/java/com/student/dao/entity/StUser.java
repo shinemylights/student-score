@@ -11,8 +11,8 @@ import lombok.Data;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**
- * @author liHeWei
- * @since 2022-04-29
+ * @author LiaoXuYang
+ * @since 2024-04-29
  */
 @Data
 @TableName("st_user")

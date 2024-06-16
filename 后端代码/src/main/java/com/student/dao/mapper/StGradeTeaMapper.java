@@ -12,8 +12,8 @@ import java.util.List;
  *  Mapper 接口
  * </p>
  *
- * @author liHeWei
- * @since 2022-05-03
+ * @author LiaoXuYang
+ * @since 2024-05-03
  */
 @Mapper
 public interface StGradeTeaMapper extends BaseMapper<StGradeTea> {

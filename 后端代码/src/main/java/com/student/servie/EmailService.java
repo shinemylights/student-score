@@ -15,8 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 处理邮件发送，效验
- * @author liHeWei
- * @since 2022-04-16
+ * @author LiaoXuYang
+ * @since 2024-04-16
  */
 @Service
 public class EmailService {
