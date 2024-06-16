@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author LiaoXuYang
- * @since 2023-02-20
+ * @since 2024-02-20
  */
 @Mapper
 public interface StBingCourseMapper extends BaseMapper<StBingCourse> {

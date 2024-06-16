@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author LiaoXuYang
- * @since 2023-03-08
+ * @since 2024-03-08
  */
 @Mapper
 public interface StuGradeMapper extends BaseMapper<StuGrade> {

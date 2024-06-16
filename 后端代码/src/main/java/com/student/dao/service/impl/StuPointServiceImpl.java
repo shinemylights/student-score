@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author LiaoXuYang
- * @since 2023-03-08
+ * @since 2024-03-08
  */
 @Service
 public class StuPointServiceImpl extends ServiceImpl<StuPointMapper, StuPoint> implements IStuPointService {

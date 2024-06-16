@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author LiaoXuYang
- * @since 2023-02-20
+ * @since 2024-02-20
  */
 @Service
 public class StBingCourseServiceImpl extends ServiceImpl<StBingCourseMapper, StBingCourse> implements IStBingCourseService {

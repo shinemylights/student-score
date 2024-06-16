@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author LiaoXuYang
- * @since 2023-03-08
+ * @since 2024-03-08
  */
 public interface IStuGradeService extends IService<StuGrade> {
 
